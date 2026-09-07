@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026年9月3日 A股盘前分析</title>
+<style>
+body { font-family: "Microsoft YaHei","PingFang SC","SimSun",sans-serif; line-height:1.7; margin:2em auto; max-width:900px; padding:0 1.2em; color:#222; }
+h1 { border-bottom:2px solid #333; padding-bottom:.3em; }
+h2 { border-left:5px solid #2a6; padding-left:.5em; margin-top:1.6em; }
+h3 { margin-top:1.2em; }
+table { border-collapse:collapse; margin:1em 0; width:100%; }
+th,td { border:1px solid #999; padding:6px 10px; text-align:left; }
+th { background:#f2f2f2; }
+blockquote { border-left:4px solid #bbb; margin:1em 0; padding:.3em 1em; color:#555; background:#fafafa; }
+code { background:#f4f4f4; padding:1px 4px; border-radius:3px; font-family:Consolas,monospace; }
+hr { border:none; border-top:1px solid #ccc; margin:1.5em 0; }
+li { margin:.25em 0; }
+</style>
+</head>
+<body>
+<h1>每日盘前简报：2026年09月03日</h1>
+<blockquote>数据来源声明：本报告数据主要取自万得 Wind 金融数据服务口径的本地历史报告与公开财经来源（华尔街见闻、证券时报、新华网、智通财经、东方财富、财联社等，详见正文链接）。本报告为自动化任务产出，不构成投资建议。 <strong>运行时间声明</strong>：本报告于 09-03 <strong>盘前</strong>整理（约 08:40–09:20 时段）；正文一律采用"最近收盘（09-02 A股 / 09-02 港股 / 09-02 美东）"口径，今日盘中数据仅出现在"五.5 盘前快照"小节。 <strong>工具可用性声明</strong>：本次运行中 Wind CLI / 中金点睛检索 CLI 不可用（pwsh 沙箱 ACL 初始化失败、无审批通道），凡未能以权威口径取得的数值一律登记于"七、数据源状态"并标注"未获取"，不编造。</blockquote>
+<hr>
+<h2>〇、TL;DR 决策卡</h2>
+<table>
+<thead><tr><th>项目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>今日方向</td><td><strong>中性偏多（超跌反抽/震荡修复）</strong>，置信度 <strong>50%</strong></td></tr>
+<tr><td>关注板块 Top3</td><td>① 国防军工（昨日逆势领涨，防高开兑现）② 通信/AI 硬件与光模块（隔夜美股 AI 反弹 + 中金超配通信设备）③ 美容护理/旅游（昨日逆势 + 消费修复）</td></tr>
+<tr><td>最大风险</td><td>中东（美伊）地缘升级 + 美债收益率反弹；农业/高位题材补跌扩散；AI 龙头（中际旭创跌停后）情绪未修复</td></tr>
+<tr><td>情景预测</td><td>乐观 30% / 中性 50% / 悲观 20%</td></tr>
+<tr><td>开盘策略</td><td>平开→守 3940（昨收 3941，仅 1 点之隔）防再探 3932；高开→防 3960-3979 回落；低开跌破 3932 → 减仓等 3900</td></tr>
+<tr><td><strong>信号与仓位</strong></td><td>中性偏多（置信度 50%）→ 基准 <strong>6 成</strong>；技术未确认止跌 + 地量（1.79 万亿近 5 个月低）+ 连跌两日 → 实际执行 <strong>5-6 成</strong>，放量（≥1.9 万亿）收复 3950 再加，跌破 3932 降至 4 成</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>一、昨日A股复盘（数据截至 09-02 收盘）</h2>
+<h3>1. 三大指数</h3>
+<table>
+<thead><tr><th>指数</th><th>收盘（报道口径）</th><th>涨跌幅</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td><strong>约 3,941</strong>（盘中最低 3,932）</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-0.97%</strong></span></td><td>险守 3940，止步日线连涨，两连阴</td></tr>
+<tr><td>深证成指</td><td>约 13,612（推算，Wind 精确值未获取）</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-1.88%</strong></span></td><td>弱于沪指</td></tr>
+<tr><td>创业板指</td><td>约 3,312（推算，Wind 精确值未获取）</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-2.39%</strong></span></td><td>领跌，成长继续杀跌</td></tr>
+</tbody>
+</table>
+<ul>
+<li>沪指两日累计约 -1.1%（09-01 -0.16%、09-02 -0.97%），全天低开走弱、尾盘收于 3940 上方 1 点处，<strong>"缩量普跌、防御为王"</strong>（[观点网](https://www.guandian.hk/article/20260902/596113.html)、[21世纪经济报道](https://m.21jingji.com/article/20260902/herald/6e8d8185bc3680ba73c4732766dce48f.html)、[新浪财经](https://finance.sina.com.cn/roll/2026-09-02/doc-iniqmmyy7728641.shtml)）。</li>
+</ul>
+<h3>2. 市场宽度与量能</h3>
+<table>
+<thead><tr><th>项目</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>涨跌家数</td><td>涨 <strong>1,247</strong> / 跌 <strong>3,858</strong>（沪深京，全市场超 3,900 只下跌）</td></tr>
+<tr><td>两市成交额</td><td><strong>约 1.79 万亿元（沪深，不足 1.8 万亿）</strong>；含北交所约 1.82 万亿——<strong>刷新近 5 个月地量</strong>，较 09-01（2.03 万亿）缩量约 2,400 亿</td></tr>
+<tr><td>融资余额</td><td><strong>26,315.61 亿元，环比 -53.54 亿元</strong>（09-02 口径，媒体披露，T+1；两融含融券未获取）</td></tr>
+<tr><td>主力资金</td><td>沪深精确净额 <strong>未获取</strong>（Wind 不可用）；市场报道称杠杆资金当日明显净流出、叠加北向卖出（[新浪](https://k.sina.com.cn/article_7669966052_1c92a64e400101m106.html)为自媒体口径，仅作定性参考）</td></tr>
+</tbody>
+</table>
+<h3>3. 行业/板块强弱（09-02 收盘）</h3>
+<table>
+<thead><tr><th>涨幅居前</th><th>代表个股</th><th>跌幅居前</th><th>代表个股</th></tr></thead>
+<tbody>
+<tr><td><strong>国防军工</strong>（地面兵装/航空装备/兵装重组，逆势领涨）</td><td>晟楠科技、内蒙一机、建设工业、长城军工涨停</td><td><strong>农林牧渔（农业全线回调）</strong></td><td>敦煌种业、国投丰乐、新农种业跌停</td></tr>
+<tr><td>美容护理/医疗美容</td><td>—</td><td>煤炭</td><td>—</td></tr>
+<tr><td>旅游/旅游景区</td><td>云南旅游涨停</td><td>传媒（影视）</td><td>—</td></tr>
+<tr><td>燃气</td><td>贵州燃气涨停</td><td>贵金属/黄金、锂矿、有色金属</td><td>紫金等承压</td></tr>
+<tr><td>电网设备、油气设服、培育钻石、玻璃玻纤、液冷概念</td><td>金帝股份、雪人集团、石化机械、飞龙股份涨停</td><td>医药生物</td><td>神奇制药、冀衡医药跌停</td></tr>
+</tbody>
+</table>
+<ul>
+<li>主线特征：<strong>军工（地缘+兵装重组）成唯一强势主线</strong>；农业/高位题材退潮、成长杀跌；中际旭创"昨涨停今跌停、失守万亿市值"标志 AI 硬件情绪冰点（[新浪川观解盘](https://finance.sina.com.cn/jjxw/2026-09-02/doc-iniqmshw2841047.shtml)、[智通财经](https://cn.investing.com/news/stock-market-news/article-3548248)、[华尔街见闻](https://wallstreetcn.com/livenews/3159058)）。</li>
+</ul>
+<h3>4. 情绪与温度计（09-02）</h3>
+<ul>
+<li>涨停 <strong>51</strong> / 跌停 <strong>9</strong> / 炸板 <strong>15</strong> / <strong>炸板率 24%</strong>；连板高度降至 <strong>4 板</strong>（高位大退潮）；北交所多只 30cm 涨停（北证50 逆势 +2.50%）。</li>
+<li><strong>情绪温度计 ≈ 40/100（偏冷，估算）</strong>——涨停 51（较 08-31 的 89 明显降温）、炸板率 24%（封板尚可）、跌停仅 9（无恐慌）、量能地量（-10）、涨跌比 1,247:3,858 普跌（-10~-15）。<strong>接近超跌区但未到冰冷</strong>，若今日缩量企稳易现技术反抽。</li>
+</ul>
+<h3>5. 技术面（上证，09-02 收盘口径）</h3>
+<table>
+<thead><tr><th>项目</th><th>数值</th><th>含义</th></tr></thead>
+<tbody>
+<tr><td>收盘</td><td>约 3,941（-0.97%）</td><td>勉强收于 3940 上方</td></tr>
+<tr><td>关键支撑</td><td><strong>3,932（昨日盘中低点）→ 3,900（整数关/前期平台）</strong></td><td>破 3932 看 3900</td></tr>
+<tr><td>关键压力</td><td><strong>3,960 → 3,979（09-01 收盘）→ 4,000 整数关</strong></td><td>反抽第一压力 3960-3979</td></tr>
+<tr><td>量能</td><td>1.79 万亿地量</td><td>缩量下跌→抛压趋缓，但需放量确认止跌</td></tr>
+<tr><td>MA 参考</td><td>MA5/MA10 精确值未获取（Wind 不可用）</td><td>09-01 收盘 3979.89 已跌破，09-02 进一步下探</td></tr>
+</tbody>
+</table>
+<h3>6. 主线判断与定性</h3>
+<ul>
+<li><strong>定性：缩量普跌、风险偏好二次降温，短线进入"垃圾博弈/超跌反抽窗口"</strong>；军工一枝独秀，农业/煤炭/医药补跌，成长（电子/通信/AI 硬件）连续两日杀跌。</li>
+<li>资金面：地量 + 融资余额下降 = 抛压边际衰竭但承接不足；北交所 30cm 活跃表明游资仍在，但高位股大退潮（连板降至 4 板）。</li>
+</ul>
+<hr>
+<h2>二、隔夜外围（数据截至 09-02 美东收盘，即今日盘前最新）</h2>
+<h3>1. 美股三大指数（结束三连跌，收涨）</h3>
+<table>
+<thead><tr><th>指数</th><th>涨跌幅</th><th>收盘（推算值，Wind 未获取）</th></tr></thead>
+<tbody>
+<tr><td>道琼斯工业平均</td><td><span style="color:#d22d2d;font-weight:bold"><strong>+0.56%</strong>（涨近 300 点）</span></td><td>约 53,062（昨收 52,766.88 推算）</td></tr>
+<tr><td>标普500</td><td><span style="color:#d22d2d;font-weight:bold"><strong>+0.46%</strong></span></td><td>约 7,667（昨收 7,631.47 推算）</td></tr>
+<tr><td>纳斯达克</td><td><span style="color:#d22d2d;font-weight:bold"><strong>+0.45%</strong></span></td><td>约 26,217（昨收 26,099.77 推算）</td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>隔夜美股反弹、结束三连跌</strong>：美联储《褐皮书》发布 + <strong>美债收益率回落</strong>带来喘息；英伟达 +3% 以上、<strong>戴尔财报后 +15.8%</strong>、美光 +2%，半导体/存储/AI 硬件普涨（[新华网](https://www.cnstock.com/commonDetail/785116)、[东方财富](https://finance.eastmoney.com/a/202609033863406556.html)、[中新经纬](https://www.jwview.com/jingwei/html/m/09-03/686074.shtml)、[财联社-环球财经](https://www.cnfin.com/dz-lb/detail/20260903/4464424_1.html)）。</li>
+<li><strong>注意（外推过滤规则）</strong>：美股反弹<strong>不直接映射 A 股方向</strong>；但其对 A 股 AI/通信链情绪修复有边际帮助，且 10Y 回落缓解估值压制。</li>
+</ul>
+<h3>2. 利率、汇率与大宗（截至 09-02 美东）</h3>
+<table>
+<thead><tr><th>变量</th><th>数值</th><th>变化/备注</th></tr></thead>
+<tbody>
+<tr><td>美债 10Y</td><td>前值 4.75%（09-01 口径）</td><td><strong>当日回落</strong>（具体值未获取）——褐皮书后缓解</td></tr>
+<tr><td>美元指数</td><td>未获取</td><td>—</td></tr>
+<tr><td>在岸/离岸人民币</td><td>未获取</td><td>—</td></tr>
+<tr><td>原油</td><td>走高（WTI 数值未获取）</td><td>中东局势 + 特朗普表态扰动，油价 V 型</td></tr>
+<tr><td>黄金/白银</td><td>走高（数值未获取）</td><td>避险 + 收益率回落双支撑</td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>地缘风险仍在</strong>：美伊（中东）冲突反复升级为隔夜最大不确定性（[大河财立方](https://app.dahecube.com/nweb/pc/spiderdetail.html?spidid=853041)），但特朗普安抚言论后油价涨势暂歇、美股收涨（[AASTOCKS](https://www.aastocks.com/tc/usq/quote/stock-news-content.aspx?symbol=MSFT&amp;id=ZT1491268&amp;source=ZHITONG)）。</li>
+</ul>
+<hr>
+<h2>二.5、港股回顾（数据截至 09-02 16:00 收盘）</h2>
+<h3>1. 港股主要指数</h3>
+<table>
+<thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td>恒生指数（HSI）</td><td><strong>25,311.21</strong>（-18.52 点）</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-0.07%</strong></span></td></tr>
+<tr><td>恒生科技（HSTI）</td><td><strong>4,517</strong>（-33 点）</td><td><strong>约 -0.73%</strong>（报道口径 -0.74%）</td></tr>
+<tr><td>恒生中国企业指数（HSCEI）</td><td><strong>未获取</strong>（Wind 不可用）</td><td>未获取</td></tr>
+</tbody>
+</table>
+<ul>
+<li>恒指早段一度跌 242 点至 25,087，午后大幅收复、<strong>险守 25,000 关口</strong>后收于 25,311.21（[新华网](http://www.news.cn/20260902/1bcae1863cf44dd484d6a21e09303945/c.html)、[HK 中通社](http://hkcna.hk/h5/docDetail.jsp?id=101411319&amp;channel=5695)、[AASTOCKS](https://www.aastocks.com/en/mobile/news.aspx?newsid=NOW.1542631&amp;newsource=AAFN)）。</li>
+<li>指数成交额：恒指主板成交较前日放大（具体值未获取）。</li>
+</ul>
+<h3>2. 南向资金（09-02）</h3>
+<ul>
+<li>港股通（沪+深）净买入 <strong>约 40.93 亿港元</strong>（公开报道口径；<strong>连续第 6 日净买入</strong>；Wind 人民币口径与沪/深拆分未获取）。加仓方向：<strong>友邦保险（净买入约 9.66 亿港元）、中际旭创、腾讯</strong>；<strong>抛售阿里巴巴</strong>（[证券时报](https://www.stcn.com/article/detail/4169734.html)、[证券之星](https://wap.stockstar.com/detail/IG2026090200034763)）。</li>
+</ul>
+<h3>3. 港股主线与行业强弱</h3>
+<ul>
+<li>走强：<strong>生物医药/医药股逆市走高、内房股、内银股（四大行+交行创新高）、教育股</strong>；美团 +2% 以上。</li>
+<li>走弱：<strong>锂电池、券商、芯片/半导体、汽车、有色金属</strong>；快手 -3%、地平线机器人 -6%+、黄金资源股承压（[智通财经](https://cn.investing.com/news/stock-market-news/article-3548358)、[星岛头条](https://www.stheadline.com/stock-market/3610731)）。</li>
+</ul>
+<h3>4. 与 A 股联动及对今日影响</h3>
+<ul>
+<li><strong>同向但 A 股更弱</strong>：港股 09-02 已现"内银新高 + 医药/教育防御走强 + 科技/锂电/券商承压"，与 A 股"军工防御 vs 成长杀跌"同属<strong>高低切换</strong>逻辑；恒指午后收复显示港股承接力好于 A 股。</li>
+<li>南向连续 6 日净流入（40.93 亿港元）+ 内银创新高 → 对 A 股银行/红利风格有正向映射；恒生科技 -0.73% 与 A 股创业板 -2.39% 均弱，<strong>成长板块联动性仍在但 A 股更超跌</strong>，今日若恒科随隔夜美股 AI 反弹，A 股电子/通信有修复窗口。</li>
+</ul>
+<hr>
+<h2>三、消息面与宏观日历</h2>
+<table>
+<thead><tr><th>时间</th><th>事件</th><th>状态/对A股影响</th></tr></thead>
+<tbody>
+<tr><td><strong>今日 09-03</strong></td><td><strong>财新/标普服务业与综合 PMI（8 月）发布窗口</strong>（次月第 3 个工作日，09:45）</td><td>兜底窗口；财新制造业 8 月 <strong>51.5（已发布，超预期、重返扩张）</strong>（[MoneyDJ](http://210.17.21.214/KMDJ/News/NewsViewer.aspx?a=cc6f1f3d-c91f-495e-9d68-ae0e6c5c86b0)）</td></tr>
+<tr><td>09-01</td><td>官方制造业 PMI（8 月）= <strong>49.8</strong>（环比 +0.6，仍处收缩）</td><td>已在 08-31 发布，边际改善</td></tr>
+<tr><td>09-04（周五）20:30</td><td><strong>美国 8 月非农</strong>发布窗口</td><td>加息预期关键变量（10Y 高位回落后的再验证）</td></tr>
+<tr><td>09-20</td><td>LPR 发布窗口</td><td>货币政策预期</td></tr>
+<tr><td>09-02</td><td>美联储《褐皮书》</td><td>隔夜发布，美股止跌</td></tr>
+<tr><td>持续</td><td><strong>中东（美伊）局势</strong></td><td>地缘风险 → 军工/油气/黄金逻辑，防风险偏好反复</td></tr>
+<tr><td>个股</td><td>中际旭创昨日跌停、失守万亿市值；大牛股"昨涨停今跌停"</td><td>AI 硬件情绪冰点，关注修复</td></tr>
+<tr><td>当日</td><td>解禁/新股明细</td><td><strong>未获取（Wind 不可用）</strong></td></tr>
+</tbody>
+</table>
+<hr>
+<h2>四、机构观点（中金）</h2>
+<table>
+<thead><tr><th>研报/观点</th><th>时间</th><th>核心</th><th>相关性</th></tr></thead>
+<tbody>
+<tr><td>《9月行业配置：更加注重自下而上发掘》（中金策略）</td><td>09-03 发布</td><td><strong>九月配置主打自下而上、把握景气线索下的结构性机会；超配通信设备、机械、化工</strong></td><td><strong>强相关（关键词B 代理）</strong>——通信设备与昨日 A 股 AI/电子杀跌后的修复方向契合（[金融界](https://finance.jrj.com.cn/2026/09/03080558337021.shtml)、[东方财富](https://finance.eastmoney.com/a/202609033863416983.html)、[新浪研报](http://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/strategy/rptid/841653262106/index.phtml)）</td></tr>
+<tr><td>《中报业绩总结：上游和AI驱动A股创5年最高盈利增速》</td><td>09-01</td><td>上游 + AI 驱动盈利新高</td><td>中：盈利支撑仍在，但短期遭遇风格切换与兑现</td></tr>
+<tr><td>《8月PMI数据点评：内需有所修复》</td><td>09-01</td><td>官方 PMI 49.8、内需边际修复</td><td>中：宏观底部企稳支撑</td></tr>
+<tr><td>关键词A（"2026-09-02 A股复盘"）专属文章</td><td>09-02</td><td><strong>未检索到中金点睛当日 A 股复盘专文</strong>（检索库本运行不可用）</td><td>以 09-03 行业配置替代，需人工核验</td></tr>
+</tbody>
+</table>
+<blockquote>注：中金点睛检索 API 本次不可用（环境限制），以上为公开渠道可得的中金观点，日期与标题以转载源为准。</blockquote>
+<hr>
+<h2>五、今日走势预测（09-03，多维、全部可打分）</h2>
+<h3>1. 方向判断</h3>
+<p><strong>主方向：中性偏多（超跌反抽/震荡修复），置信度 50%。</strong> 证据链：</p>
+<ul>
+<li>利多：① 隔夜美股结束三连跌、10Y 回落（估值压力缓解，AI 硬件反弹）；② A 股两连阴 + 地量 1.79 万亿 = 抛压边际衰竭；③ 军工/美容/旅游逆势赚钱效应仍在、北证50 +2.50% 显示游资活跃；④ 中金 9 月超配通信设备/机械（结构性方向）；⑤ 南向连续 6 日净流入支撑港股与红利。</li>
+<li>利空/中性：① 破位风险未解除（昨收 3941 仅高于 3940 1 点，盘中曾破 3932）；② 缩量=无增量，反抽需放量确认；③ 连板降至 4 板、高位大退潮，赚钱效应弱；④ 中东地缘反复；⑤ 成长龙头（中际旭创跌停）情绪未修复。</li>
+<li><strong>引用修正建议约束（修正库最近 5 条）</strong>：a) <strong>外推过滤</strong>——隔夜美股反弹不直接映射 A 股领涨，故方向给"震荡修复"而非"上攻"，且 AI 链候选须标注"近 3 日累计跌幅已深、仅博技术反抽"；b) <strong>放量滞涨=分歧硬约束</strong>——若今日放量但指数不涨（量价背离）立即下调至谨慎；c) <strong>置信度上限</strong>——连续两日回调后首次反抽，置信度给 50% 上限；d) <strong>情绪数据补强</strong>——已用温度计≈40（偏冷）前置"超跌反抽窗口"判断；e) <strong>风格轮动过快</strong>——不押单一风格，均衡配置防御+超跌。</li>
+</ul>
+<h3>2. 多维预测表（以昨收 3,941 为基准）</h3>
+<table>
+<thead><tr><th>维度</th><th>预测</th></tr></thead>
+<tbody>
+<tr><td>方向</td><td>中性偏多（震荡修复/超跌反抽），置信度 <strong>50%</strong></td></tr>
+<tr><td>点位</td><td>上证收盘区间 <strong>[3,900, 3,979]</strong>（≈ -1.0% ~ +1.0%），重心 3,930-3,960</td></tr>
+<tr><td>量能</td><td>两市 <strong>1.6-2.0 万亿</strong>；反抽确认需 ≥1.9 万亿</td></tr>
+<tr><td>风格</td><td><strong>均衡（防御延续 + 超跌成长反抽）</strong>；若放量则成长修复占优，缩量则红利/军工占优</td></tr>
+<tr><td>板块</td><td>领涨候选：<strong>国防军工（防高开兑现）、通信设备/AI 硬件（超跌反抽，中金超配）、美容护理/旅游</strong>；领跌候选：<strong>农林牧渔（高位补跌延续）、煤炭、影视传媒</strong></td></tr>
+<tr><td>资金</td><td>主力资金<strong>净流出收窄（-50 亿 ~ +150 亿）</strong>；融资余额止跌企稳</td></tr>
+<tr><td>触发</td><td>乐观 30% / 中性 50% / 悲观 20%</td></tr>
+<tr><td>风险</td><td>中东升级、10Y 反弹、破 3,932 打开下行、农业/高位补跌扩散</td></tr>
+<tr><td>港股</td><td>恒指 <strong>25,100-25,700</strong>（≈ -0.8% ~ +1.5%），<strong>中性偏多</strong>（南向连续净流入 + 隔夜美股反弹）</td></tr>
+</tbody>
+</table>
+<h3>3. 情景预测表（概率合计 100%、触发互斥穷尽）</h3>
+<table>
+<thead><tr><th>情景</th><th>概率</th><th>触发条件</th><th>对应走势</th></tr></thead>
+<tbody>
+<tr><td>乐观</td><td>30%</td><td>放量（≥1.9 万亿）收复 3,950 且隔夜外围平稳</td><td>上证 <strong>3,950-3,979（+0.2%~+1.0%）</strong>，AI/通信超跌反抽 + 军工延续</td></tr>
+<tr><td>中性</td><td>50%</td><td>量能 1.6-1.9 万亿，3,920-3,960 区间换手</td><td>上证 <strong>3,920-3,960（约 -0.5%~+0.5%）</strong> 震荡，板块轮动快</td></tr>
+<tr><td>悲观</td><td>20%</td><td>跌破 3,932 且放量，或中东升级/10Y 再升</td><td>上证 <strong>3,880-3,920（-1.5%~-0.5%）</strong>，回补 3,900 缺口下方</td></tr>
+</tbody>
+</table>
+<h3>4. 开盘决策树与仓位纪律</h3>
+<table>
+<thead><tr><th>开盘情形</th><th>应对动作</th><th>仓位纪律</th></tr></thead>
+<tbody>
+<tr><td>高开（+0.3% 以上，&gt;3,953）</td><td>防 3,960-3,979 回落；<strong>放量滞涨立即减（硬约束）</strong></td><td>5-6 成</td></tr>
+<tr><td>平开（±0.3%，3,929-3,953）</td><td>观察量能；回踩 3,940/3,932 不破分批低吸，站上 3,950 加</td><td>5-6 成（基准）</td></tr>
+<tr><td>低开（-0.3% 以下，&lt;3,929）</td><td>跌破 3,932 减仓观望，等收复 3,940 再回补；3,900 附近博反弹需快进快出</td><td>降至 4 成以下</td></tr>
+</tbody>
+</table>
+<h3>5. 关注板块与策略</h3>
+<table>
+<thead><tr><th>板块</th><th>观察点 / 触发条件</th></tr></thead>
+<tbody>
+<tr><td>国防军工（地缘+兵装重组）</td><td>昨日领涨今日防高开兑现；内蒙一机/长城军工连板高度能否延续</td></tr>
+<tr><td>通信设备 / AI 硬件 / 光模块</td><td>中际旭创跌停后是否止跌；隔夜美股 AI 反弹 → 反抽需量能；中金 9 月超配通信设备</td></tr>
+<tr><td>美容护理 / 旅游 / 燃气</td><td>昨日逆势，看消费轮动延续性</td></tr>
+<tr><td>银行 / 红利（H 股内银创新高映射）</td><td>南向连续净流入，防御底仓</td></tr>
+<tr><td>农林牧渔 / 煤炭 / 影视（规避）</td><td>高位补跌未止，不接飞刀</td></tr>
+<tr><td>液冷 / 电网设备 / 培育钻石（题材）</td><td>游资活跃方向，快进快出</td></tr>
+</tbody>
+</table>
+<h3>6. 风险提示</h3>
+<ol>
+<li><strong>破位风险</strong>：昨收 3941 距 3940 仅 1 点、盘中已破 3932——今日若不能站稳 3940，悲观档触发看 3,900；</li>
+<li><strong>中东地缘（美伊）升级</strong>：油价/黄金脉冲式走高，风险偏好反复（最大不可测变量）；</li>
+<li><strong>美债 10Y</strong>：隔夜回落但仍在 4.7%+ 高位，若再度上行压制成长估值；</li>
+<li><strong>AI 硬件情绪</strong>：中际旭创"万亿市值失守+跌停"，光模块/AI 链补跌未确认结束；</li>
+<li><strong>风格轮动过快</strong>：军工/农业/成长的"一日游"风险大，禁追高、禁单一风格重仓；</li>
+<li><strong>量能地量</strong>：无增量资金下反抽易夭折，放量滞涨按硬约束减仓。</li>
+</ol>
+<hr>
+<h2>五.5、盘前快照（09-03 盘前，独立小节）</h2>
+<table>
+<thead><tr><th>项目</th><th>数值</th><th>时间戳</th></tr></thead>
+<tbody>
+<tr><td>A 股</td><td>未开盘（09:30 前无盘中数据）</td><td>09-03 约 09:00</td></tr>
+<tr><td>隔夜美股（09-02 美东收盘）</td><td>道指 +0.56% / 标普 +0.46% / 纳指 +0.45%（结束三连跌）</td><td>已计入"二、隔夜外围"</td></tr>
+<tr><td>亚太股指（早盘）</td><td>未获取（开盘前）</td><td>—</td></tr>
+</tbody>
+</table>
+<blockquote>今日盘中恒指（09:30 后）及 A 股开盘数据待收盘后由复盘任务补录，不混入正文。</blockquote>
+<hr>
+<h2>六、昨日预测多维评判与修正（09-02 预测 vs 09-02 实际）</h2>
+<h3>0. 评判对象说明（重要）</h3>
+<ul>
+<li><strong>09-02 盘前晨报未正常产出</strong>：<code>daily-reports/daily-brief-20260902.md</code>（根目录标准位置）为空（0 字节），当日 08:45 调度运行中断（logs/stderr-20260902.log = <code>^C</code>）；实际存档为 <strong>09-02 14:10 盘中简报</strong>（<code>2026年9月分析/2026年9月2日分析/daily-brief-20260902.md</code>），其预测对象是"尾盘观察 + <strong>明日（09-03）前瞻</strong>"，<strong>未对 09-02 当日收盘作出正式 9 维盘前预测集</strong>。</li>
+<li>依据台账规则 v2："某维度未预测计 0 分并在评判中注明（禁止事后补口径）"。<strong>本次无可评分的 09-02 正式多维预测</strong>，以下仅对盘中简报内可核验口径做对照核验，正式 9 维总分<strong>不适用/记为 N/A</strong>，并给出流程修正建议。</li>
+<li>09-02 盘中简报已对 <strong>09-01 预测</strong>做初步评判；09-01 的正式 9 维评分已由 <code>ledger_backfill --multi</code> 于 09-02 晚写入台账（总分 <strong>0.70，合格</strong>，方向 0.80/点位 1.00/量能 1.00/风格 0.15/板块 0.30/资金 0.15/触发 1.00/风险 1.00/港股 0.85）→ 不在本报告重复。</li>
+</ul>
+<h3>1. 可核验口径对照（09-02 盘中简报的尾盘观察 vs 09-02 实际）</h3>
+<table>
+<thead><tr><th>口径</th><th>09-02 盘中稿表述</th><th>09-02 实际</th><th>核验</th></tr></thead>
+<tbody>
+<tr><td>量能</td><td>"若缩量下跌（&lt;1.8 万亿）→ 抛压有限"</td><td>1.79 万亿（地量）</td><td><strong>命中</strong>：缩量下跌兑现</td></tr>
+<tr><td>3940 得失</td><td>"守住 3940 → 短线止跌概率上升；跌破 → 悲观档触发，回调加深（看 3900-3920）"</td><td>收 3,941 险守（盘中破 3,932 后收回）</td><td><strong>条件命中但未确认</strong>：守住 3940（1 点之差），悲观档未触发；"止跌"需今日验证</td></tr>
+<tr><td>情绪</td><td>"温度计若 &lt;40 偏冷 → 接近超跌"</td><td>估算 ≈40（偏冷）</td><td>基本命中（偏冷）</td></tr>
+<tr><td>风格</td><td>"成长继续领跌、防御延续"</td><td>创业板 -2.39% 领跌、军工/美容/旅游逆势</td><td><strong>命中</strong></td></tr>
+</tbody>
+</table>
+<blockquote>说明：该盘中稿<strong>未给出</strong>正式方向置信度、收盘点位区间、主力资金、板块 Top3 候选、港股区间等可打分项（因非盘前稿）→ 依规则按"未预测"处理，不计入正式总分。</blockquote>
+<h3>2. 总分与评级</h3>
+<p><strong>N/A（不评分）</strong>——09-02 正式盘前 9 维预测缺失（调度中断），非方法性脱靶。上一次完整正式评分（09-01 预测 vs 09-01 实际）= <strong>0.70 / 合格</strong>（台账已录）。</p>
+<h3>3. 错误归因（&lt;0.5 维度）</h3>
+<ul>
+<li>无正式预测维度可归因。<strong>根因属 D（数据/流程）</strong>：08:45 调度运行被中断（<code>^C</code>），导致 09-02 无盘前晨报 → 台账出现评分空窗。细分档：<strong>流程·调度中断</strong>。</li>
+</ul>
+<h3>4. 修正建议（拟追加写入 <code>daily-reports/logs/correction-library.md</code>，追加式）</h3>
+<table>
+<thead><tr><th>日期</th><th>错误维度</th><th>归因</th><th>修正建议</th><th>是否已引用</th></tr></thead>
+<tbody>
+<tr><td>2026-09-03</td><td>流程/数据（调度）</td><td>09-02 08:45 盘前运行中断（^C），根目录晨报为空，仅 14:10 盘中稿存档，正式 9 维预测缺失</td><td><strong>调度韧性</strong>：mb_bom 增加超时/中断自动重试（如 09:10 未产出则重跑）；盘中补跑稿必须显式标注"非盘前稿、次日不可评分"，避免台账空窗</td><td>待引用（09-04 起）</td></tr>
+<tr><td>2026-09-03</td><td>流程/数据</td><td>09-02 收盘复盘（2026年9月2日A股收盘总结.md）为空、相关 stderr 显示中断</td><td>复盘任务加自动重试与空文件告警；复盘与晨报互为输入，空窗会传导</td><td>待引用</td></tr>
+<tr><td>2026-09-03</td><td>方法/预测</td><td>盘前晨报缺失期间需降级预案</td><td>若某日盘前稿缺失，次日晨报 §六 直接以"未预测计 0 + 原因注明"模板填充（本次已执行该降级），并升级调度告警</td><td>已引用（本报告 §六）</td></tr>
+</tbody>
+</table>
+<h3>5. 今日反馈声明</h3>
+<p>今日预测已显式引用修正库最近 5 条约束：<strong>外推过滤</strong>（不把隔夜美股反弹映射为 A 股"上攻"）、<strong>放量滞涨=分歧硬约束</strong>（决策树高开档内置减仓规则）、<strong>置信度上限 50%</strong>、<strong>情绪数据补强</strong>（温度计≈40 偏冷前置"超跌反抽窗口"）、<strong>风格轮动过快→不押单一风格</strong>（关注板块按均衡配置并附触发条件）；并新增 3 条流程级修正建议待写入修正库（本运行因 E:\ 不可写未能自动追加，需人工追加或下次运行补录）。</p>
+<hr>
+<h2>七、数据源状态</h2>
+<table>
+<thead><tr><th>数据项</th><th>状态</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>A 股三大指数收盘/涨跌幅</td><td>部分成功</td><td>涨跌幅 + 上证收盘 3,941（公开报道）；<strong>深成/创业板精确收盘值未获取</strong>（Wind 不可用，推算值已标注）</td></tr>
+<tr><td>涨跌家数/涨停跌停/炸板率/连板</td><td>成功</td><td>华尔街见闻/财联社（涨 1247/跌 3858、涨停 51/跌停 9/炸板 24%、连板 4 板）</td></tr>
+<tr><td>两市成交额</td><td>成功</td><td>约 1.79 万亿（沪深），含北交所约 1.82 万亿；媒体口径</td></tr>
+<tr><td>融资余额</td><td>成功（媒体口径）</td><td>26,315.61 亿 / -53.54 亿；两融含融券未获取</td></tr>
+<tr><td>主力资金（沪/深净额）</td><td><strong>未获取</strong></td><td>Wind 不可用</td></tr>
+<tr><td>美股三大指数</td><td>部分成功</td><td>涨跌幅确认（+0.56/+0.46/+0.45%）；<strong>精确收盘点位未获取（推算值已标注）</strong></td></tr>
+<tr><td>美债 10Y/美元/人民币/大宗数值</td><td><strong>未获取</strong>（方向有：10Y 回落、油金走高）</td><td>Wind 不可用</td></tr>
+<tr><td>港股 HSI/HSTI</td><td>成功</td><td>25,311.21 / 4,517（公开报道）</td></tr>
+<tr><td>港股 HSCEI</td><td><strong>未获取</strong></td><td>Wind 不可用</td></tr>
+<tr><td>港股成交额（精确）</td><td><strong>未获取</strong></td><td>有"放大"方向</td></tr>
+<tr><td>南向资金</td><td>部分成功</td><td>40.93 亿港元（媒体口径，连续 6 日）；<strong>人民币口径与沪/深拆分未获取</strong></td></tr>
+<tr><td>申万一级精确排序/数值</td><td><strong>未获取</strong>（行业强弱以板块级公开报道代替）</td><td>Wind 不可用</td></tr>
+<tr><td>中金研报</td><td>部分成功</td><td>09-03 行业配置（公开转载）；<strong>关键词A（09-02 A股复盘）未检索到</strong>；点睛库 API 本运行不可用</td></tr>
+<tr><td>情绪温度计（09-02）</td><td>估算</td><td>由五因子合成 ≈40（偏冷），非 Wind 精确值</td></tr>
+<tr><td>解禁/新股明细</td><td><strong>未获取</strong></td><td>数据源暂不可用</td></tr>
+<tr><td>文件归档（daily-brief-20260903.md / HTML / DOCX）</td><td><strong>本会话未执行</strong></td><td>pwsh 沙箱 ACL 初始化失败 + E:\ 写入被拒（无审批通道），需由调度脚本重跑归档</td></tr>
+</tbody>
+</table>
+<p><strong>连续未获取提醒</strong>：Wind CLI 类精确字段本次为环境性不可用（非数据源本身故障）；若下次运行仍不可用，将按规则对相关维度标注"待修复/降级使用"。</p>
+<hr>
+<p><em>（本报告由每日盘前自动化任务生成；正文数据截至 09-02 收盘（A股/港股）与 09-02 美东收盘（美股），运行时间 2026-09-03 盘前。数据来源：本地历史报告（Wind 口径）+ 公开财经来源 + 中金观点公开转载。本报告不构成任何投资建议。）</em></p>
+<hr>
+<p><strong>执行说明（供调度方）：</strong> ① 本会话因环境限制（pwsh 沙箱 <code>SetNamedSecurityInfoW grantWrite(C:\Windows\System32)</code> 失败、无审批通道）无法调用 Wind CLI、中金点睛检索 CLI 与 python 归档脚本，亦无法写入 E:\；请以本稿内容为基础，由 <code>run-daily-morning-brief.ps1</code> 重跑或人工将本 Markdown 落入 <code>daily-reports/daily-brief-20260903.md</code> 并执行 HTML/DOCX 转换归档至 <code>2026年9月分析\2026年9月3日分析\</code>；② 本报告"六.4"的 3 条修正建议需追加至 <code>daily-reports/logs/correction-library.md</code>（本会话无法写入）。</p>
+</body></html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026年8月31日 A股盘前分析</title>
+<style>
+body { font-family: "Microsoft YaHei","PingFang SC","SimSun",sans-serif; line-height:1.7; margin:2em auto; max-width:900px; padding:0 1.2em; color:#222; }
+h1 { border-bottom:2px solid #333; padding-bottom:.3em; }
+h2 { border-left:5px solid #2a6; padding-left:.5em; margin-top:1.6em; }
+h3 { margin-top:1.2em; }
+table { border-collapse:collapse; margin:1em 0; width:100%; }
+th,td { border:1px solid #999; padding:6px 10px; text-align:left; }
+th { background:#f2f2f2; }
+blockquote { border-left:4px solid #bbb; margin:1em 0; padding:.3em 1em; color:#555; background:#fafafa; }
+code { background:#f4f4f4; padding:1px 4px; border-radius:3px; font-family:Consolas,monospace; }
+hr { border:none; border-top:1px solid #ccc; margin:1.5em 0; }
+li { margin:.25em 0; }
+</style>
+</head>
+<body>
+<h1>每日盘前简报：2026年08月31日</h1>
+<blockquote>数据来源于万得 Wind 金融数据服务与中金点睛研报数据库。本报告为自动化任务产出，不构成投资建议。 本报告按晨报 4.0（多维预测·次日评判·自修正闭环版）规范生成（prompts/morning-brief-v4-prompt.md）。 <strong>运行时间声明</strong>：本任务于 08-31 盘前运行（约 08:30），正文数据一律采用"最近收盘（08-28）"口径；今日盘中数据仅在"五.5 盘前快照"小节。</blockquote>
+<hr>
+<h2>〇、TL;DR 决策卡</h2>
+<table>
+<thead><tr><th>项目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>今日方向</td><td><strong>中性（震荡）</strong>，置信度 50%</td></tr>
+<tr><td>关注板块 Top3</td><td>① 石油石化/煤炭（资源，08-28 行业涨幅榜第 1，油价 83.4 美元支撑）② 农林牧渔/基础化工（周度强势，榜前 5）③ 国产算力/玻璃基板（中金主线，回调分批关注）</td></tr>
+<tr><td>最大风险</td><td>今日 9:30 <strong>官方 PMI（8月）</strong> 不及预期 + 美债 10Y 上行至 4.73% + 美元走强至 99.68 + 成长高位分歧</td></tr>
+<tr><td>情景预测</td><td>乐观 25% / 中性 50% / 悲观 25%（合计 100%）</td></tr>
+<tr><td>开盘策略</td><td>平开/低开→守 3916（MA20）；高开→不追，防冲高回落</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>一、昨日A股复盘（数据截至 08-28 收盘）</h2>
+<h3>1. 三大指数</h3>
+<table>
+<thead><tr><th>指数</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>成交额</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td>000001.SH</td><td>3952.18</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-0.11%</strong></span></td><td>约 9704 亿元</td></tr>
+<tr><td>深证成指</td><td>399001.SZ</td><td>13953.07</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-0.68%</strong></span></td><td>约 11315 亿元</td></tr>
+<tr><td>创业板指</td><td>399006.SZ</td><td>3424.40</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-1.41%</strong></span></td><td>约 5443 亿元</td></tr>
+</tbody>
+</table>
+<ul>
+<li>上证高开低走（开 3950.24、高 3970.31、低 3947.80），盘中曾冲 3970 后回落收跌，<strong>放量滞涨</strong>；创业板跌 1.41%，成长继续回调。</li>
+</ul>
+<h3>2. 市场宽度与资金</h3>
+<table>
+<thead><tr><th>项目</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>涨跌家数</td><td>涨 3013 / 跌 2390 / 平 148</td></tr>
+<tr><td>两市成交额</td><td><strong>21015 亿元（约 2.10 万亿）</strong>，为周内次高，但指数收跌——放量滞涨/高位分歧</td></tr>
+<tr><td>主力资金</td><td>沪市 <strong>+9.4 亿</strong>、深市 <strong>-141.1 亿</strong>，合计 <strong>-131.7 亿</strong>（成长方向资金撤离）</td></tr>
+</tbody>
+</table>
+<h3>3. 申万一级行业（08-28）</h3>
+<table>
+<thead><tr><th>涨幅榜前5</th><th>涨跌幅</th><th>跌幅榜前5</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td>石油石化</td><td><span style="color:#d22d2d;font-weight:bold"><strong>+2.16%</strong></span></td><td>电子</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-1.61%</strong></span></td></tr>
+<tr><td>农林牧渔</td><td><span style="color:#d22d2d;font-weight:bold">+1.66%</span></td><td>通信</td><td><span style="color:#0a8a3a;font-weight:bold">-1.43%</span></td></tr>
+<tr><td>基础化工</td><td><span style="color:#d22d2d;font-weight:bold">+1.66%</span></td><td>机械设备</td><td><span style="color:#0a8a3a;font-weight:bold">-1.29%</span></td></tr>
+<tr><td>纺织服饰</td><td><span style="color:#d22d2d;font-weight:bold">+1.65%</span></td><td>医药生物</td><td><span style="color:#0a8a3a;font-weight:bold">-1.09%</span></td></tr>
+<tr><td>商贸零售</td><td><span style="color:#d22d2d;font-weight:bold">+1.14%</span></td><td>电力设备</td><td><span style="color:#0a8a3a;font-weight:bold">-0.77%</span></td></tr>
+</tbody>
+</table>
+<h3>4. 情绪与资金细节</h3>
+<ul>
+<li>涨停/跌停家数、连板高度、炸板率：<strong>未获取（数据源暂不可用）</strong>。</li>
+<li>两融余额、沪深港通资金、ETF 申赎动向：<strong>未获取（数据源暂不可用）</strong>。</li>
+</ul>
+<h3>5. 技术面（上证指数，08-28 收盘口径，由 K 线收盘价自算）</h3>
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>相对位置</th></tr></thead>
+<tbody>
+<tr><td>收盘价</td><td>3952.18</td><td>—</td></tr>
+<tr><td>MA5 / MA10 / MA20</td><td>3918.54 / 3926.90 / 3916.06</td><td>收盘仍站上全部均线（+0.9% 左右）</td></tr>
+<tr><td>关键支撑</td><td>3900-3916（前平台 + MA20 区）</td><td>关键压力 3957-3970（前高/整数关）</td></tr>
+<tr><td>量能</td><td>08-28 上证成交 9704 亿，放量滞涨</td><td>高位分歧信号</td></tr>
+</tbody>
+</table>
+<blockquote>注：Wind 快照均线（3999/3995/3979）与本表口径不同，本表以 K 线收盘价简单平均计算，可复现。</blockquote>
+<h3>6. 主线判断</h3>
+<ul>
+<li><strong>放量滞涨、高位分歧</strong>：08-28 成交 2.10 万亿但指数收跌，成长（电子 -1.61%、通信 -1.43%）大幅回撤，资源（石油石化 +2.16%）接力。</li>
+<li>风格：资金从成长撤向资源/防御，符合修正库建议 1（外推过滤）与建议 2（放量滞涨=分歧信号）的预判。</li>
+<li><strong>总体定性</strong>：连续反弹后首次放量调整，短线进入高位分歧消化期；上证仍站上均线但动能转弱。</li>
+</ul>
+<hr>
+<h2>二、隔夜外围（数据截至 08-28 美东收盘 / 08-28 国内收盘）</h2>
+<h3>1. 美股三大指数</h3>
+<table>
+<thead><tr><th>指数</th><th>代码</th><th>收盘价</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td>道琼斯工业平均</td><td>DJI.GI</td><td>53559.99</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-0.02%</strong></span></td></tr>
+<tr><td>纳斯达克指数</td><td>IXIC.GI</td><td>26402.42</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-0.52%</strong></span></td></tr>
+<tr><td>标普500</td><td>SPX.GI</td><td>7711.76</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-0.25%</strong></span></td></tr>
+</tbody>
+</table>
+<ul>
+<li>隔夜美股小幅收跌、纳指领跌（-0.52%），科技情绪转弱，与 A 股 08-28 成长回调同向，<strong>无外推利多</strong>。</li>
+</ul>
+<h3>2. 利率、汇率与大宗（截至 08-28）</h3>
+<table>
+<thead><tr><th>变量</th><th>数值</th><th>变化（较 08-27）</th></tr></thead>
+<tbody>
+<tr><td>美债 10Y 收益率</td><td><strong>4.73%</strong></td><td><strong>上行 6bp</strong>（明显走高）</td></tr>
+<tr><td>美元指数</td><td><strong>99.68</strong></td><td><strong>上行 0.55</strong>（走强）</td></tr>
+<tr><td>在岸美元兑人民币</td><td>6.7204</td><td>基本持平</td></tr>
+<tr><td>离岸美元兑人民币（USDCNH）</td><td>6.7314</td><td>人民币走弱（+0.19%）</td></tr>
+<tr><td>伦敦金现货</td><td>4562.75 美元/盎司</td><td>基本持平</td></tr>
+<tr><td>WTI 原油</td><td>83.40 美元/桶</td><td>基本持平</td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>外围明显转紧</strong>：美债收益率上行至 4.73%、美元指数走强至 99.68、离岸人民币走弱——三者叠加对 A 股风险偏好构成边际压制，与中金"市场隐含加息概率上行"（9 月 34%、10/12 月 49%/69%）相互印证。</li>
+</ul>
+<hr>
+<h2>二.5、港股回顾（数据截至 08-28 收盘）</h2>
+<h3>1. 港股主要指数</h3>
+<table>
+<thead><tr><th>指数</th><th>代码</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead>
+<tbody>
+<tr><td>恒生指数</td><td>HSI.HI</td><td>25584.79</td><td><span style="color:#d22d2d;font-weight:bold"><strong>+0.07%</strong></span></td><td>2312 亿港元</td></tr>
+<tr><td>恒生中国企业指数</td><td>HSCEI.HI</td><td>8490.39</td><td>—（收盘值）</td><td>—</td></tr>
+<tr><td>恒生科技</td><td>HSTECH.HI</td><td>4605.15</td><td>—（收盘值）</td><td>—</td></tr>
+</tbody>
+</table>
+<h3>2. 南向资金（08-28）</h3>
+<ul>
+<li>港股通净买入 <strong>10.09 亿元</strong>（沪 7.59 / 深 2.50）——小幅净流入，对港股支撑有限。</li>
+</ul>
+<h3>3. 港股主线</h3>
+<ul>
+<li>恒指低开高走微涨（+0.07%），科技波动、整体平稳；南向小幅流入，无显著方向性变化。</li>
+</ul>
+<h3>4. 与 A 股联动及对今日影响</h3>
+<ul>
+<li>08-28 <strong>A 股成长大跌（创业板 -1.41%）而港股相对抗跌（恒指 +0.07%），AH 走势背离</strong>；</li>
+<li>今日 08-31 港股开盘后恒指一度 -1.11%、恒生科技 -1.40%（盘中，属盘前快照范畴）——若港股科技续弱，对 A 股成长（电子/通信）情绪构成压制，印证本报告方向"中性（震荡）"的谨慎判断。</li>
+</ul>
+<hr>
+<h2>三、消息面与宏观日历</h2>
+<table>
+<thead><tr><th>时间</th><th>事件</th><th>对A股影响</th></tr></thead>
+<tbody>
+<tr><td><strong>今日 08-31 9:30</strong></td><td><strong>官方 PMI（8月）发布窗口</strong>（每月最后一天上午 9:30，兜底模板）</td><td><strong>关键事件</strong>：数据不及预期将触发悲观情景</td></tr>
+<tr><td>09-01</td><td>财新 PMI 发布窗口（次月首日，遇节假日顺延）</td><td>制造业景气交叉验证</td></tr>
+<tr><td>09-04（周五）20:30</td><td>美国非农发布窗口（每月首个周五，北京时间）</td><td>外围加息预期关键变量</td></tr>
+<tr><td>08-28 前后</td><td>中报披露收官周（8 月末，兜底模板）</td><td>业绩不及预期个股补跌风险</td></tr>
+<tr><td>09-21</td><td>越南 FTSE 升级为次级新兴市场（或带来 19-20 亿美元被动资金）</td><td>外资配置边际关注</td></tr>
+<tr><td>当日</td><td>解禁、新股申购/上市明细</td><td><strong>未获取（数据源暂不可用）</strong></td></tr>
+</tbody>
+</table>
+<hr>
+<h2>四、机构观点（中金）</h2>
+<p><strong>关键词A（`20260828 A股复盘`）</strong>返回：越南 FTSE 升级（外资配置）、大模型量化（AI 应用）、Token 推理产业链、香港楼市（隐含加息概率上行）、棕榈油。 <strong>关键词B（`20260831 A股策略`）返回为空 → 当日无相关研报</strong>（按规范注明，不编造）。</p>
+<table>
+<thead><tr><th>近期主线观点</th><th>核心</th><th>相关性</th></tr></thead>
+<tbody>
+<tr><td>《国产算力系列一：超节点》（08-27）</td><td>超节点为国产 AI 下一站，中长期主线</td><td>强相关</td></tr>
+<tr><td>《如何刻画AI泡沫程度？》（08-26）</td><td>AI 交易转弱源于需求担忧</td><td>强相关：解释成长回调</td></tr>
+<tr><td>《低库存放大价格弹性，LNG价格中枢或上移》（08-27）</td><td>LNG/能源价格中枢上移</td><td>中等：资源板块支撑</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>五、今日走势预测（08-31）</h2>
+<h3>1. 方向判断</h3>
+<p><strong>主方向判断：中性（震荡），置信度 50%。</strong> 依据（证据链）：① 昨日放量滞涨、成长高位分歧，主力深市净流出 141 亿（利空）；② 隔夜美股收跌、美债 10Y 上行至 4.73%、美元走强至 99.68（利空）；③ 今日 9:30 官方 PMI 发布，数据落地前市场倾向观望（中性）；④ 上证仍站上 MA5/10/20（3916-3927），权重与资源相对强势（利多）；⑤ 修正库引用：连续反弹后置信度上限 ≤50%（本报告置信度 50%）。</p>
+<h3>2. 多维预测表（全部可打分）</h3>
+<table>
+<thead><tr><th>维度</th><th>预测</th></tr></thead>
+<tbody>
+<tr><td>点位</td><td>上证 <strong>3900-3965</strong>（≈ -1.3% ~ +0.3%，昨收 3952.18 基准）</td></tr>
+<tr><td>量能</td><td>两市 <strong>1.6-2.1 万亿</strong></td></tr>
+<tr><td>风格</td><td><strong>均衡</strong>（资源/防御相对占优，成长分化未消化）</td></tr>
+<tr><td>板块</td><td>领涨候选：<strong>石油石化、煤炭、农林牧渔、基础化工</strong>；领跌候选：<strong>电子、通信</strong></td></tr>
+<tr><td>资金</td><td>主力<strong>净流入 0-100 亿</strong>（中性偏谨慎）</td></tr>
+<tr><td>触发</td><td>乐观 25% / 中性 50% / 悲观 25%</td></tr>
+<tr><td>风险</td><td>PMI 不及预期、美债上行、美元走强、成长高位分歧</td></tr>
+<tr><td>港股</td><td>恒指 <strong>25400-25700</strong>（≈ -0.7% ~ +0.5%，昨收 25584.79 基准），<strong>中性</strong></td></tr>
+</tbody>
+</table>
+<h3>3. 情景预测表（触发条件互斥穷尽，点位换算涨跌幅口径）</h3>
+<table>
+<thead><tr><th>情景</th><th>概率</th><th>触发条件</th><th>对应走势</th></tr></thead>
+<tbody>
+<tr><td>乐观</td><td>25%</td><td>PMI 超预期（&gt;50 且环比改善）且量能 ≥2.1 万亿</td><td>上证<strong>突破 3965（≈ +0.3% 以上）</strong>，成长修复</td></tr>
+<tr><td>中性</td><td>50%</td><td>PMI 符合预期（49.5-50.5），量能 1.6-2.1 万亿</td><td>上证 <strong>3900-3965（≈ -1.3% ~ +0.3%）</strong> 震荡</td></tr>
+<tr><td>悲观</td><td>25%</td><td>PMI 不及预期（&lt;49.5）或量能 &lt;1.6 万亿 或 放量滞涨再现</td><td>上证<strong>跌破 3900（≈ -1.3% 以下）</strong>，成长续跌</td></tr>
+</tbody>
+</table>
+<h3>4. 开盘决策树与仓位纪律</h3>
+<table>
+<thead><tr><th>开盘情形</th><th>应对动作</th><th>仓位纪律</th></tr></thead>
+<tbody>
+<tr><td>高开（+0.3% 以上）</td><td>不追高，观察 PMI 与量能；冲高 3965 上方减仓</td><td>5-6 成</td></tr>
+<tr><td>平开（±0.3% 内）</td><td>守 3916（MA20），回踩 3920-3930 分批低吸</td><td>5-6 成</td></tr>
+<tr><td>低开（-0.3% 以下）</td><td>跌破 3900 减仓观望，等企稳（收复 3916）再回补</td><td>降至 4 成以下</td></tr>
+</tbody>
+</table>
+<h3>5. 关注板块与策略</h3>
+<table>
+<thead><tr><th>板块</th><th>观察点 / 触发条件</th></tr></thead>
+<tbody>
+<tr><td>石油石化/煤炭（资源）</td><td>08-28 涨幅榜第 1，油价 83.4 美元支撑；延续性观察</td></tr>
+<tr><td>农林牧渔/基础化工</td><td>周度强势（+6.46%/+3.40%），量能配合则延续</td></tr>
+<tr><td>国产算力/超节点/玻璃基板（中金主线）</td><td>成长分歧中回调，<strong>不追跌</strong>，等量价企稳后分批</td></tr>
+<tr><td>电子/通信（谨慎）</td><td>高位分歧未消化，<strong>不抄底</strong>，等 PMI 落地与止跌信号</td></tr>
+<tr><td>银行/食品饮料（防御）</td><td>若 PMI 不及预期，防御或再受青睐</td></tr>
+</tbody>
+</table>
+<h3>6. 风险提示</h3>
+<ol>
+<li><strong>今日 9:30 官方 PMI（8月）</strong>：关键变量，数据不及预期将触发悲观情景。</li>
+<li><strong>美债与美元</strong>：10Y 4.73%（+6bp）、美元 99.68（+0.55）继续上行将压制风险偏好。</li>
+<li><strong>成长高位分歧</strong>：电子/通信连续回调，若低开低走拖累指数。</li>
+<li><strong>量能退潮</strong>：若成交回落至 1.6 万亿以下，反弹终结风险。</li>
+<li><strong>中报收官</strong>：业绩不及预期个股补跌。</li>
+</ol>
+<hr>
+<h2>五.5、盘前快照（08-31 盘前）</h2>
+<table>
+<thead><tr><th>项目</th><th>数值</th><th>时间戳</th></tr></thead>
+<tbody>
+<tr><td>A 股</td><td>未开盘（今日 09:30 前无盘中数据）</td><td>08-31 08:30</td></tr>
+</tbody>
+</table>
+<blockquote>隔夜美股（08-28 美东收盘）已计入"二、隔夜外围"；今日盘中数据待开盘后由收盘补录流程处理。</blockquote>
+<hr>
+<h2>六、昨日预测多维评判（08-28 预测 vs 08-28 实际）</h2>
+<table>
+<thead><tr><th>维度</th><th>得分</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>方向</td><td>0.5</td><td>预测"偏多/上攻"，实际震荡（上证 -0.11%）——相邻</td></tr>
+<tr><td>点位</td><td>1.0</td><td>实际收盘 3952.18 落在预测区间 3945-3968 内</td></tr>
+<tr><td>风格</td><td>0.0</td><td>预测成长领涨，实际成长大跌（电子 -1.61% 领跌）</td></tr>
+<tr><td>触发</td><td>1.0</td><td>最高概率情景（中性 50%）兑现</td></tr>
+<tr><td>风险</td><td>1.0</td><td>放量滞涨发生且"高位分歧"已预警</td></tr>
+<tr><td><strong>总分</strong></td><td><strong>0.64（良好）</strong></td><td>量能/板块/资金未预测（v3 无显式预测）</td></tr>
+</tbody>
+</table>
+<p><strong>归因与改正</strong>：主因 <strong>L 逻辑错误</strong>（将隔夜美股纳指 +1.57% 外推为 A 股成长延续，忽略连续反弹后的高位分歧）——已引用修正库建议 1（外推过滤）与建议 2（放量滞涨=分歧信号），<strong>本报告方向判断已降为中性、置信度压降至 50%</strong>。</p>
+<hr>
+<h2>七、数据源状态</h2>
+<table>
+<thead><tr><th>数据项</th><th>状态</th><th>连续未获取天数</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>三大指数 K 线（08-28 收盘）</td><td>成功</td><td>0</td><td>wind index_data.get_index_kline</td></tr>
+<tr><td>涨跌家数/成交额/主力</td><td>成功</td><td>0</td><td>wind analytics_data</td></tr>
+<tr><td>美股/美债/美元/汇率/大宗</td><td>成功</td><td>0</td><td>wind index_data / economic_data</td></tr>
+<tr><td>中金研报（关键词A）</td><td>成功</td><td>0</td><td>cicc-research-article-search</td></tr>
+<tr><td>中金研报（关键词B <code>20260831 A股策略</code>）</td><td><strong>空结果</strong></td><td>1</td><td>当日无相关研报（晨间未发布）</td></tr>
+<tr><td>涨停/跌停/连板/炸板率</td><td><strong>未获取</strong></td><td>1</td><td>数据源暂不可用（连续 3 天标记"待修复"）</td></tr>
+<tr><td>两融/沪深港通/ETF</td><td><strong>未获取</strong></td><td>1</td><td>数据源暂不可用</td></tr>
+<tr><td>解禁/新股申购上市明细</td><td><strong>未获取</strong></td><td>1</td><td>数据源暂不可用（已用兜底模板标注窗口）</td></tr>
+</tbody>
+</table>
+<hr>
+<p><em>（本报告由每日晨间自动化任务生成。数据来源：万得 Wind 金融数据服务、中金点睛研报数据库。本报告不构成任何投资建议。）</em></p>
+</body></html>

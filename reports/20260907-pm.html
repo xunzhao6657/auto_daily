@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日收盘复盘：2026-09-07（周一）</title>
+<style>
+body { font-family: "Microsoft YaHei","PingFang SC","SimSun",sans-serif; line-height:1.7; margin:2em auto; max-width:900px; padding:0 1.2em; color:#222; }
+h1 { border-bottom:2px solid #333; padding-bottom:.3em; }
+h2 { border-left:5px solid #2a6; padding-left:.5em; margin-top:1.6em; }
+h3 { margin-top:1.2em; }
+table { border-collapse:collapse; margin:1em 0; width:100%; }
+th,td { border:1px solid #999; padding:6px 10px; text-align:left; }
+th { background:#f2f2f2; }
+blockquote { border-left:4px solid #bbb; margin:1em 0; padding:.3em 1em; color:#555; background:#fafafa; }
+code { background:#f4f4f4; padding:1px 4px; border-radius:3px; font-family:Consolas,monospace; }
+hr { border:none; border-top:1px solid #ccc; margin:1.5em 0; }
+li { margin:.25em 0; }
+</style>
+</head>
+<body>
+<h1>每日收盘复盘：2026-09-07（周一）</h1>
+<blockquote>数据来源于万得 Wind 金融数据服务与中金点睛研报数据库。本报告为自动化任务产出，不构成投资建议。 本报告按 <code>prompts/post-market-review-prompt.md</code> 规范生成（禁编造硬性条款执行：行情仅用 Wind 可核验收盘口径）。 运行时间声明：2026-09-07 20:12 运行（20:00 定时任务 DSH-DailyReview 尚未注册生效，本报告为人工补生成）。</blockquote>
+<hr>
+<h2>一、当日市场定性</h2>
+<p><strong>风格极致反转日：超跌成长（通信/电子）暴力反抽 + 高位防御（银行/煤炭）补跌，涨停潮情绪回暖，但上证受权重拖累仅微涨——结构强、指数平。</strong></p>
+<table>
+<thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>开/高/低</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td>3932.70</td><td><strong>↑ +0.07%</strong></td><td>开 3942.51 / 高 3948.42 / 低 3916.49</td></tr>
+<tr><td>深证成指</td><td>13774.91</td><td><strong>↑ +1.91%</strong></td><td>开 13605.02 / 高 13811.26 / 低 13590.82</td></tr>
+<tr><td>创业板指</td><td>3398.68</td><td><strong>↑ +3.41%</strong></td><td>开 3326.42 / 高 3409.36 / 低 3320.27</td></tr>
+</tbody>
+</table>
+<p>（Wind <code>index_data.get_index_price_indicators</code>，09-07 15:00 收盘口径）</p>
+<ul>
+<li>上证早盘一度下探 3916.49（-0.35%），午后随成长反抽回升收 3932.70；深成/创业板低开高走收在日高附近。</li>
+<li><strong>创业板 +3.41% 为近月单日最大涨幅</strong>，成长相对强度 g = 创业板Δ − 上证Δ = <strong>+3.34pct</strong>，极端成长占优。</li>
+</ul>
+<h2>二、盘面结构</h2>
+<h3>1. 行业（09-07，申万一级，Wind <code>analytics_data</code>）</h3>
+<table>
+<thead><tr><th>领涨</th><th>涨跌幅</th><th>领跌</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td>通信</td><td><span style="color:#d22d2d;font-weight:bold"><strong>+6.17%</strong></span></td><td>煤炭</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-2.53%</strong></span></td></tr>
+<tr><td>电子</td><td><span style="color:#d22d2d;font-weight:bold">+3.92%</span></td><td>非银金融</td><td><span style="color:#0a8a3a;font-weight:bold">-1.87%</span></td></tr>
+<tr><td>综合</td><td><span style="color:#d22d2d;font-weight:bold">+2.71%</span></td><td>石油石化</td><td><span style="color:#0a8a3a;font-weight:bold">-1.53%</span></td></tr>
+<tr><td>机械设备</td><td><span style="color:#d22d2d;font-weight:bold">+2.51%</span></td><td>银行</td><td><span style="color:#0a8a3a;font-weight:bold">-1.49%</span></td></tr>
+<tr><td>农林牧渔</td><td><span style="color:#d22d2d;font-weight:bold">+1.72%</span></td><td>钢铁</td><td><span style="color:#0a8a3a;font-weight:bold">-1.19%</span></td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>与 09-04 完全反转</strong>：昨日领跌的电子（-2.72%）/昨日银行领涨（W36 +4.03%）今日电子 +3.92%、银行 -1.49%——高低切换一日完成。</li>
+<li>涨停结构集中于 <strong>PCB/光模块/通信电子</strong>（沪电股份、光迅科技、深南电路、剑桥科技、景旺电子、兴森科技、顺络电子、超声电子等批量涨停），中金"AI 硬件基本面最强（半导体 +202%/光模块 +140%）"在超跌后触发资金回补。</li>
+</ul>
+<h3>2. 宽度与量能</h3>
+<ul>
+<li>全市场：<strong>涨 3167 / 跌 2196 / 平 195</strong>——普涨（对比 09-04 涨2444/跌2914 的跌多涨少，宽度显著修复）。</li>
+<li>两市成交 <strong>约 1.95 万亿</strong>（上证 8979.0 亿 + 深市 10481.1 亿，Wind 指数成交额口径）：较 09-04 的 2.03 万亿<strong>微缩约 -4%</strong>，反抽量能温和（未达 2.1 万亿乐观档）。</li>
+</ul>
+<h3>3. 资金</h3>
+<ul>
+<li>主力资金：<strong>净流入约 +1002.2 亿</strong>（沪 +322.8 / 深 +678.0，Wind 全市场口径）——普涨反抽日资金主动进攻，与防御日（09-04 +95.9 亿）形成鲜明对比。</li>
+<li>两融余额：<strong>26378.43 亿（09-04 值，T+1 未更新至 09-07）</strong>——杠杆资金动向明日披露。</li>
+</ul>
+<h2>三、情绪观察</h2>
+<ul>
+<li><strong>涨停 ≥100 家</strong>（Wind 涨跌停明细返回列表达上限，精确家数以盘后官方统计为准；涨停集中于电子/通信/机械）——较 09-04（数据未获取）明显回暖，情绪修复；</li>
+<li><strong>跌停 2 家</strong>（康欣新材、兴业科技，均 09:25 一字跌停）；</li>
+<li>炸板率：<strong>未获取</strong>（数据源未返回聚合行）；</li>
+<li><strong>情绪温度计</strong>：涨停潮（≥100）、跌停极少（2）、量能 1.95 万亿、涨跌比 3167/2196≈1.44 四因子齐备，<strong>炸板率因子缺失</strong> → 按四因子区间估计 <strong>约 65-75（偏热）</strong>，精确值因炸板率缺失不给出（合规：因子缺失不作精确冒充）；若炸板率偏高（超跌反抽日封板质量待验证）则下修至 60-70。</li>
+</ul>
+<h2>四、晨报预测初步对照（09-07 晨报 vs 09-07 实际）</h2>
+<table>
+<thead><tr><th>预测维度</th><th>晨报预测（原文要点）</th><th>实际走势</th><th>初步判定</th></tr></thead>
+<tbody>
+<tr><td>方向</td><td>中性偏空（震荡，防破位），中心 -0.15%±0.15，置信度 45%</td><td>上证 +0.07%；深成 +1.91%、创业板 +3.41%</td><td><strong>脱靶（结构）</strong>：上证震荡微涨，但预测"防破位/偏空"与成长暴涨的结构方向相反</td></tr>
+<tr><td>点位</td><td>上证中心 3924 [3919, 3929]</td><td>3932.70（超上沿 3.7 点）</td><td>部分（中心误差 8.7 点，方向性略偏空）</td></tr>
+<tr><td>量能</td><td>中心 1.90 万亿 [1.80, 2.00]</td><td>约 1.95 万亿</td><td><strong>命中</strong></td></tr>
+<tr><td>风格</td><td>均衡偏防御；g ∈ [-0.3, +0.1]</td><td>g = +3.34（成长极端占优）</td><td><strong>脱靶（大错）</strong>：防御延续判断被高低切换打脸</td></tr>
+<tr><td>板块</td><td>领涨：银行/农林牧渔/食品饮料；领跌：电子/有色/建材</td><td>领涨：通信/电子/综合/机械；领跌：煤炭/非银/石化/银行/钢铁</td><td><strong>反向</strong>：领涨候选全部领跌、领跌候选全部领涨</td></tr>
+<tr><td>资金</td><td>主力中心 -50 亿（±100）</td><td><span style="color:#d22d2d;font-weight:bold">+1002.2 亿</span></td><td><strong>严重低估（方向相反）</strong></td></tr>
+<tr><td>触发</td><td>乐观 20% / 中性 50% / 悲观 30%；乐观需量 ≥2.1 万亿且收复 3940</td><td>量 1.95 万亿、上证未收复 3940 → 中性档</td><td>中性档兑现（报 50%）</td></tr>
+<tr><td>风险</td><td>破 3900 下看 3860/3830 等</td><td>未破 3900，无破位风险发生</td><td>预警未触发（对但无信息量）</td></tr>
+<tr><td>港股</td><td>恒指中心 25600 [25550, 25650]</td><td>恒指 25413.12（-0.93%）</td><td>偏差 187 点（中心下沿外）</td></tr>
+</tbody>
+</table>
+<blockquote><strong>完整打分以收盘后 `ledger_backfill --multi` 台账为准，本复盘仅轻量初判。</strong></blockquote>
+<p><strong>初判小结</strong>：量能/触发命中；点位小偏差；<strong>方向（结构）、风格、板块、资金四维反向/严重偏差</strong>——主因是晨报押注"防御延续"（受上周防御强势 + W36 高低切换惯性影响），未预料高位防御（银行/煤炭连涨后）成为新的拥挤端、超跌成长（通信/电子两周大跌后）触发技术性反抽。这与修正库"风格轮动过快→不押单一风格"（08-28 提出）方向一致但执行未到位——<strong>防御同样不能追高</strong>。</p>
+<h2>五、异动与消息面</h2>
+<ul>
+<li><strong>盘面异动（Wind 收盘可核验）</strong>：通信 +6.17% 领涨、PCB/光模块批量涨停（沪电股份、光迅科技、深南电路、剑桥科技等，均为前期 AI 硬件超跌标的）；煤炭 -2.53%、银行 -1.49% 高位防御集体补跌——高低切换为主驱动，未发现对应单一消息。</li>
+<li>宏观窗口：今日为 8 月 CPI/PPI（约 9/9-9/10）发布前日，无重大数据；周末至今日无重大可核验政策/新闻（未获取，不编造）。</li>
+<li>港股：恒指 -0.93%（周五 +1.74% 后回调），南向小幅回流 +10.9 亿（沪 +6.8/深 +4.1）。</li>
+</ul>
+<h2>六、明日关注点（供次日晨报输入）</h2>
+<ol>
+<li><strong>成长反抽持续性</strong>：通信/电子单日 +6.17%/+3.92% 是"超跌技术反抽一日游"还是趋势修复？看明日量能能否维持 ≥1.9 万亿、创业板能否站稳 3400、PCB/光模块龙头是否连板。</li>
+<li><strong>防御补跌是否确认风格切换</strong>：银行/煤炭若明日续跌（连 2 日），"红利抱团"阶段性瓦解确认；若防御企稳反弹则今日为脉冲。关注主力资金是否继续流入成长。</li>
+<li><strong>量能阈值</strong>：今日 1.95 万亿未达 2.1 万亿乐观档——反抽若要升级为反弹需放量突破 3940/3950（MA5）。</li>
+<li><strong>事件窗口</strong>：8 月 CPI/PPI 约 9/9-9/10 公布（明后日），发布后自动填数评估；9 月中旬美国 CPI 与议息临近（美债 10Y 4.78% 高位）。</li>
+<li><strong>情绪温度计连续性</strong>：今日涨停 ≥100 家，明日关注炸板率与连板高度——若涨停缩量而跌停增加，反抽尾声信号。</li>
+<li><strong>A/H 背离</strong>：周五港股大涨 A 股未跟、周一港股回调 A 股反弹——内外节奏脱钩，外推过滤继续适用。</li>
+</ol>
+<h2>七、数据源状态</h2>
+<table>
+<thead><tr><th>数据项</th><th>状态</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>三大指数收盘/成交/开高低</td><td>成功</td><td>wind index_data（09-07 收盘）</td></tr>
+<tr><td>涨跌家数/行业前5后5/涨停跌停明细</td><td>成功</td><td>wind analytics_data</td></tr>
+<tr><td>主力资金净流入</td><td>成功</td><td>wind analytics_data（全市场 +1002.2 亿）</td></tr>
+<tr><td>港股恒指/国企/科技 + 南向</td><td>成功</td><td>wind（09-07 收盘；南向 +10.91 亿）</td></tr>
+<tr><td>两融余额</td><td>部分（T+1）</td><td>M0075992 更新至 09-04：26378.43 亿</td></tr>
+<tr><td>涨停家数精确值/炸板率</td><td><strong>部分未获取</strong></td><td>涨停 ≥100（列表达上限）；炸板率无聚合行（工具未返回，登记）</td></tr>
+<tr><td>消息面/政策</td><td><strong>未获取</strong></td><td>无重大可核验新闻（不编造）</td></tr>
+</tbody>
+</table>
+<hr>
+<p><em>（本报告由收盘复盘 Agent 于 2026-09-07 20:12 补生成。数据来源：万得 Wind 金融数据服务、中金点睛研报数据库。本报告不构成任何投资建议。）</em></p>
+</body></html>

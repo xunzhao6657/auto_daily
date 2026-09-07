@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日收盘复盘：2026年09月04日（周五）</title>
+<style>
+body { font-family: "Microsoft YaHei","PingFang SC","SimSun",sans-serif; line-height:1.7; margin:2em auto; max-width:900px; padding:0 1.2em; color:#222; }
+h1 { border-bottom:2px solid #333; padding-bottom:.3em; }
+h2 { border-left:5px solid #2a6; padding-left:.5em; margin-top:1.6em; }
+h3 { margin-top:1.2em; }
+table { border-collapse:collapse; margin:1em 0; width:100%; }
+th,td { border:1px solid #999; padding:6px 10px; text-align:left; }
+th { background:#f2f2f2; }
+blockquote { border-left:4px solid #bbb; margin:1em 0; padding:.3em 1em; color:#555; background:#fafafa; }
+code { background:#f4f4f4; padding:1px 4px; border-radius:3px; font-family:Consolas,monospace; }
+hr { border:none; border-top:1px solid #ccc; margin:1.5em 0; }
+li { margin:.25em 0; }
+</style>
+</head>
+<body>
+<h1>每日收盘复盘：2026年09月04日（周五）</h1>
+<blockquote>数据来源于万得 Wind 金融数据服务。本报告为自动化任务产出，不构成投资建议。 <strong>数据口径声明（重要）</strong>：本复盘全部行情数值均以 Wind 权威口径核验（本会话 Wind CLI 可用）；凡 Wind 无法核验的数据项一律标注"未获取"，<strong>不引用任何未经核验的"收评/公开报道"内容</strong>。此前 20:12 生成的一版复盘在 Wind 不可用环境下填充了未经核验的行业/涨停细节，已作废并由本版替换。 与晨报闭环：正式 9 维打分已由收盘后 <code>ledger_backfill.py --multi</code> 补录至台账（09-04：方向 0.0 / 点位 0.85 / 总分 0.63，评级合格）。</blockquote>
+<hr>
+<h2>一、当日市场定性</h2>
+<p><strong>一句话定性（仅 Wind K 线可核验的价量事实）：上证高开（3955.55 vs 昨收 3942.09）冲高 3980.20 后回落，收 3930.12（↓-0.30%），日 K 收阴、失守 3940；两市放量至 20304 亿（较 09-03 约 17587 亿放量 +15%）；跌多涨少（涨 2444 / 跌 2914）；申万一级层面农林牧渔、传媒、食品饮料领涨，电子领跌——"放量下跌 + 高低切换（消费/传媒 vs 电子/有色）"。</strong></p>
+<blockquote>注：盘中"何时跳水/谁护盘"等过程细节超出 Wind 收盘数据可核验范围，一律不描述（未获取口径）。</blockquote>
+<h3>指数收盘（Wind，2026-09-04）</h3>
+<table>
+<thead><tr><th>指数</th><th>代码</th><th>收盘</th><th>涨跌幅</th><th>较昨收涨跌点</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td>000001.SH</td><td>3930.12</td><td><strong>↓ -0.30%</strong></td><td><span style="color:#0a8a3a;font-weight:bold">-11.97</span></td><td>高开冲高回落，失守 3940</td></tr>
+<tr><td>深证成指</td><td>399001.SZ</td><td>13516.97</td><td><strong>↓ -0.79%</strong></td><td><span style="color:#0a8a3a;font-weight:bold">-108.15</span></td><td>成长拖累</td></tr>
+<tr><td>创业板指</td><td>399006.SZ</td><td>3286.55</td><td><strong>↓ -0.78%</strong></td><td><span style="color:#0a8a3a;font-weight:bold">-25.99</span></td><td>连续回调</td></tr>
+<tr><td>恒生指数（参考）</td><td>HSI.HI</td><td>25650.87</td><td><strong>↑ +1.74%</strong></td><td><span style="color:#d22d2d;font-weight:bold">+437.56</span></td><td>港股与 A 股背离走强</td></tr>
+</tbody>
+</table>
+<ul>
+<li>K 线形状（可核验）：上证开 3955.55、高 3980.20、低 3915.22、收 3930.12——高开冲高后回落收阴；深成开 13725.65、高 13798.36、低 13448.79、收 13516.97。</li>
+<li>两市合计成交 <strong>20304.41 亿元</strong>（沪 9380.96 + 深 10923.44），放量下跌。</li>
+</ul>
+<h2>二、盘面结构（Wind 申万一级，精确排序）</h2>
+<h3>1. 行业涨跌幅（09-04）</h3>
+<table>
+<thead><tr><th>涨幅前5</th><th>涨跌幅</th><th>跌幅前5</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td>农林牧渔(申万)</td><td><span style="color:#d22d2d;font-weight:bold"><strong>+4.16%</strong></span></td><td>电子(申万)</td><td><span style="color:#0a8a3a;font-weight:bold"><strong>-2.72%</strong></span></td></tr>
+<tr><td>传媒(申万)</td><td><span style="color:#d22d2d;font-weight:bold">+3.16%</span></td><td>建筑材料(申万)</td><td><span style="color:#0a8a3a;font-weight:bold">-2.14%</span></td></tr>
+<tr><td>食品饮料(申万)</td><td><span style="color:#d22d2d;font-weight:bold">+2.11%</span></td><td>综合(申万)</td><td><span style="color:#0a8a3a;font-weight:bold">-1.96%</span></td></tr>
+<tr><td>美容护理(申万)</td><td><span style="color:#d22d2d;font-weight:bold">+1.41%</span></td><td>机械设备(申万)</td><td><span style="color:#0a8a3a;font-weight:bold">-1.86%</span></td></tr>
+<tr><td>商贸零售(申万)</td><td><span style="color:#d22d2d;font-weight:bold">+1.19%</span></td><td>有色金属(申万)</td><td><span style="color:#0a8a3a;font-weight:bold">-1.68%</span></td></tr>
+</tbody>
+</table>
+<ul>
+<li>结构含义：资金高低切换——<strong>农林牧渔（养殖）/传媒/食品饮料（白酒等）领涨，电子（AI 硬件等）领跌、有色回调</strong>；放量下跌日消费/传媒逆势走强，与指数收跌形成结构分化。</li>
+</ul>
+<h3>2. 量能、资金与宽度（Wind）</h3>
+<table>
+<thead><tr><th>项目</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>两市成交额</td><td><strong>20304.41 亿元</strong>（放量，较 09-03 约 17587 亿 +15%）</td></tr>
+<tr><td>主力资金净流入</td><td>沪 <strong>+4.10 亿</strong> / 深 <strong>+91.78 亿</strong>，合计 <strong>+95.88 亿</strong></td></tr>
+<tr><td>涨跌家数</td><td>涨 <strong>2444</strong> / 跌 <strong>2914</strong> / 平 <strong>199</strong>（跌多涨少）</td></tr>
+<tr><td>两融余额</td><td><strong>未获取</strong>（T+1 明细接口未返回，标注）</td></tr>
+</tbody>
+</table>
+<h2>三、情绪观察</h2>
+<ul>
+<li><strong>涨停/跌停家数、炸板率（09-04）</strong>：<strong>未获取</strong>（Wind 汇总接口多次查询未返回汇总行，按规范登记"未获取"，不编造数值）。</li>
+<li>情绪温度计：因涨停/炸板率缺失，<strong>无法精确合成，本日不给出温度计分数</strong>（避免用估算冒充精确值）。</li>
+</ul>
+<h2>四、晨报预测初步对照（完整打分以台账为准）</h2>
+<blockquote>对照基准：<code>daily-brief-20260904.md</code>（09-04 盘前）。 台账（收盘后补录）：方向 0.0（脱靶）、点位 0.85（近邻）、量能 1.00、总分 <strong>0.63</strong>（合格），详见 <code>logs/prediction-ledger.md</code>。</blockquote>
+<table>
+<thead><tr><th>预测维度</th><th>晨报预测（摘录）</th><th>实际走势（Wind）</th><th>判定</th></tr></thead>
+<tbody>
+<tr><td>方向</td><td>中性偏多（修复尝试），置信度 55%</td><td>上证 -0.30% 收 3930.12（下跌）</td><td><strong>脱靶</strong>（押注美股带动修复，实际高开回落收跌）</td></tr>
+<tr><td>点位</td><td>上证 3940-3990</td><td>收 3930.12（低于区间下沿 3940 约 10 点 / 0.25%）</td><td>近邻（0.85）</td></tr>
+<tr><td>量能</td><td>1.7-2.2 万亿</td><td>20304 亿（2.03 万亿，放量）</td><td>命中区间（但为放量下跌，性质与"放量确认反弹"相反）</td></tr>
+<tr><td>港股</td><td>恒指 25400-25800（中性偏多）</td><td>恒指 25650.87（+1.74%，区间内）</td><td>命中</td></tr>
+<tr><td>归因</td><td>—</td><td>隔夜美股大涨（纳指 +1.40%）未能带动 A 股修复——<strong>"外推过滤"约束再次验证</strong>：外围利多需 A 股自身承接（缩量后放量下跌、情绪偏冷环境中外推失效）</td><td>—</td></tr>
+</tbody>
+</table>
+<h2>五、异动与消息面（仅 Wind 可核验）</h2>
+<ul>
+<li><strong>价量异动</strong>：上证高开冲 3980（+0.97%）后回落收 -0.30%，振幅约 1.6%；两市放量至 2.03 万亿但收跌——放量下跌（可核验）。</li>
+<li>行业异动：农林牧渔 +4.16% 领涨（Wind 申万口径）、电子 -2.72% 领跌（可核验）。</li>
+<li>消息面：<strong>未获取</strong>（本复盘不引用未经核验的公开报道）。</li>
+</ul>
+<h2>六、明日关注点（供 09-08 周一晨报）</h2>
+<ol>
+<li>上证 3930 失守 3940 后，<strong>3915（09-04 低点）/ 3900</strong> 支撑是否有效；</li>
+<li>放量下跌后<strong>量能能否回落企稳</strong>（若缩量止跌则杀跌趋缓）；</li>
+<li>高低切换延续性：农林牧渔/传媒/食品饮料 vs 电子/有色的轮动方向；</li>
+<li>隔夜美股（09-04 美东）收盘与周末消息；</li>
+<li>下周一（09-07）晨报将引用本复盘修正建议（外推过滤强化）。</li>
+</ol>
+<h2>七、数据源状态</h2>
+<table>
+<thead><tr><th>数据项</th><th>状态</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>三大指数 K 线（09-04）</td><td>成功</td><td>wind，收 3930.12/13516.97/3286.55</td></tr>
+<tr><td>涨跌家数 / 成交额 / 主力</td><td>成功</td><td>2444/2914/199；20304 亿；+95.88 亿</td></tr>
+<tr><td>申万一级行业前5后5</td><td>成功</td><td>农林牧渔+4.16 领涨、电子-2.72 领跌</td></tr>
+<tr><td>恒生指数</td><td>成功</td><td>25650.87（+1.74%）</td></tr>
+<tr><td>涨停/跌停/炸板率</td><td><strong>未获取</strong></td><td>Wind 汇总接口未返回汇总行</td></tr>
+<tr><td>两融 / 北向 / 消息面</td><td><strong>未获取</strong></td><td>不编造</td></tr>
+</tbody>
+</table>
+<hr>
+<p><em>（本复盘由每日收盘复盘 Agent 自动生成，全部数据以万得 Wind 口径核验。本报告不构成任何投资建议。）</em></p>
+</body></html>
