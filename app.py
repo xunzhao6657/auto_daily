@@ -100,12 +100,11 @@ def fetch_all():
 
 @st.cache_data(ttl=3600, show_spinner="AI 正在撰写报告…")
 def ai_report(rtype: str, day: str, digest: str, key: str) -> str:
+    """提示词来自 skills/ashare-daily-report（与本地 dsh 链路 v4.2 同源），
+    自动注入昨日晨报（供多维评判）与修正建议库（自修正闭环）。"""
     now = dt.datetime.now()
-    tpl = gr.AM_PROMPT if rtype == "am" else gr.PM_PROMPT
-    user = tpl.format(
-        date=f"{now:%Y-%m-%d}（{'周' + '一二三四五六日'[now.weekday()]}）",
-        digest=digest)
-    return gr.call_deepseek(gr.SYSTEM_PROMPT, user, key)
+    user = gr.build_user_prompt(rtype, now, digest)
+    return gr.call_deepseek(gr.load_system_prompt(), user, key)
 
 
 def get_api_key():

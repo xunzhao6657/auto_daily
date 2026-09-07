@@ -200,42 +200,134 @@ def build_digest(data, rtype, now):
     return "\n".join(lines)
 
 
-# ---------------- AI 生成 ----------------
+# ---------------- AI 生成（提示词加载自 skill：skills/ashare-daily-report/） ----------------
 
+SKILL_DIR = ROOT / "skills" / "ashare-daily-report"
+PROMPTS_DIR = SKILL_DIR / "prompts"
+
+# 回退用精简提示词（skill 文件缺失时兜底）
 SYSTEM_PROMPT = """你是一位买方视角的 A 股策略分析师，为个人投资者撰写每日盘面报告。
 写作要求：
 1. 只使用「数据底稿」中提供的数据，严禁编造或臆测任何数字；数据未覆盖的项目直接标注「（未获取）」，不估算。
 2. 结论先行、证据链清晰；多用表格，少用长段落。
 3. 预测一律给「中心值 + 窄区间」，并给情景概率（乐观/中性/悲观，合计100%）。
 4. 风格克制、批判性，明确写出最可能证错你判断的因素。
-5. 篇幅控制在 1500 字以内，Markdown 格式。"""
+5. Markdown 格式。"""
 
-AM_PROMPT = """请基于以下数据底稿，生成今日 A 股盘前分析报告，结构如下：
-
-# 每日盘前简报：{date}
-
-## 〇、TL;DR 决策卡（表格：今日方向/置信度/中心涨跌幅、关注板块Top3、规避板块、最大风险、开盘策略）
-## 一、上一交易日 A 股复盘（指数表现、宽度与量能、主力资金、行业板块）
-## 二、隔夜与最新外围（美股/港股，以及对今日 A 股的传导逻辑）
-## 三、今日走势预测（方向判断+证据链、多维预测表：点位/量能/风格/板块，一律中心值+窄区间）
-## 四、开盘决策树与仓位纪律（高开/平开/低开三种情形的应对）
-## 五、风险提示（3-5 条，第一条必须是最可能破位/证错的情形）
-
-数据底稿：
+AM_PROMPT = """请基于以下数据底稿，生成今日 A 股盘前分析报告（TL;DR决策卡/上一交易日复盘/隔夜外围/今日多维预测/开盘决策树/风险提示），数据底稿：
 {digest}"""
 
-PM_PROMPT = """请基于以下数据底稿，生成今日 A 股收盘总结报告，结构如下：
-
-# 今日 A 股收盘总结：{date}
-
-## 〇、TL;DR 决策卡（表格：今日实际方向、量能与宽度、最强/最弱板块、明日关注点）
-## 一、今日盘面复盘（指数与走势、宽度与量能、主力资金、行业板块表现）
-## 二、外围市场联动（美股/港股表现与 A 股的背离或共振）
-## 三、今日盘面定性（一段话：量价关系、风格特征、强弱判断）
-## 四、明日展望（方向倾向+置信度、关注板块Top3、风险提示3条）
-
-数据底稿：
+PM_PROMPT = """请基于以下数据底稿，生成今日 A 股收盘总结报告（当日市场定性/盘面结构/情绪观察/明日关注点），数据底稿：
 {digest}"""
+
+
+def load_prompt(name):
+    """读取 skill 内的提示词文件；失败返回 None（由调用方回退）。"""
+    p = PROMPTS_DIR / f"{name}.md"
+    try:
+        return p.read_text(encoding="utf-8")
+    except Exception as e:
+        print(f"[warn] 提示词文件读取失败 {p}: {e}", file=sys.stderr)
+        return None
+
+
+def load_system_prompt():
+    return load_prompt("system") or SYSTEM_PROMPT
+
+
+def _last_entries(text, max_chars=6000):
+    """修正建议库等追加式文件：只取最近内容（末尾 max_chars 字符，按段落边界对齐）。"""
+    text = text.strip()
+    if len(text) <= max_chars:
+        return text
+    cut = text[-max_chars:]
+    idx = cut.find("\n---")
+    return cut[idx + 1:].strip() if idx >= 0 else cut.strip()
+
+
+def _html_to_text(html):
+    """报告 HTML 粗转文本（历史报告只有 HTML 时作为上下文兜底）。"""
+    s = re.sub(r"(?is)<(script|style|head)[^>]*>.*?</\1>", "", html)
+    s = re.sub(r"(?is)</t[dh]>", " | ", s)
+    s = re.sub(r"(?is)</tr>", "\n", s)
+    s = re.sub(r"(?is)<br\s*/?>", "\n", s)
+    s = re.sub(r"(?is)</(p|div|h[1-6]|li|table|section|blockquote)>", "\n", s)
+    s = re.sub(r"(?s)<[^>]+>", "", s)
+    s = re.sub(r"[ \t]+\n", "\n", s)
+    s = re.sub(r"\n{3,}", "\n\n", s)
+    return s.strip()
+
+
+def _read_report(date_key: str, before_today: bool):
+    """读取报告（优先 md，其次 html 粗转文本）。before_today=True 取该日之前最近一份 am。"""
+    try:
+        if before_today:
+            cands = sorted(
+                (p for p in REPORTS.glob("????????-am.*")
+                 if p.suffix in (".md", ".html") and p.stem[:8] < date_key),
+                key=lambda p: (p.stem[:8], 0 if p.suffix == ".html" else 1))
+            p = cands[-1] if cands else None
+        else:
+            p = None
+            for suffix in (".md", ".html"):
+                c = REPORTS / f"{date_key}-am{suffix}"
+                if c.exists():
+                    p = c
+                    break
+        if not p:
+            return None
+        text = p.read_text(encoding="utf-8")
+        return text if p.suffix == ".md" else _html_to_text(text)
+    except Exception:
+        return None
+
+
+def _prev_am_report(today_key):
+    """找到今天之前的最近一份盘前晨报，返回文本或 None。"""
+    return _read_report(today_key, before_today=True)
+
+
+def _today_am_report(today_key):
+    """当日的盘前晨报（供收盘复盘做预测对照）。"""
+    return _read_report(today_key, before_today=False)
+
+
+def build_user_prompt(rtype, now, digest):
+    """组装完整 user 消息：skill 提示词 + 昨日晨报/修正库/当日晨报上下文 + 数据底稿。
+
+    优先加载 skills/ashare-daily-report/prompts/{am,pm}.md（与本地 dsh 链路 v4.2 同源），
+    文件缺失时回退到内置精简版。
+    """
+    date_str = f"{now:%Y-%m-%d}（{'周' + '一二三四五六日'[now.weekday()]}）"
+    today_key = f"{now:%Y%m%d}"
+
+    tpl = load_prompt(rtype)
+    if tpl:
+        corr = None
+        yest = None
+        today = None
+        try:
+            cp = SKILL_DIR / "correction-library.md"
+            if cp.exists():
+                corr = _last_entries(cp.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+        if rtype == "am":
+            yest = _prev_am_report(today_key)
+        else:
+            today = _today_am_report(today_key)
+
+        user = (tpl
+                .replace("<<DATE>>", date_str)
+                .replace("<<DIGEST>>", digest)
+                .replace("<<CORRECTION_LIBRARY>>", corr or "（修正库为空）")
+                .replace("<<YESTERDAY_REPORT>>", yest or "（未提供：昨日晨报未获取，评判小节标注未获取并跳过）")
+                .replace("<<TODAY_REPORT>>", today or "（未提供：当日晨报未获取，对照小节标注未获取并跳过）"))
+        return user
+
+    # 回退：内置精简版
+    tpl = AM_PROMPT if rtype == "am" else PM_PROMPT
+    return tpl.format(date=date_str, digest=digest)
 
 
 def call_deepseek(system, user, key):
@@ -249,7 +341,7 @@ def call_deepseek(system, user, key):
                 {"role": "user", "content": user},
             ],
             "temperature": 0.3,
-            "max_tokens": 4096,
+            "max_tokens": 8192,
         },
         timeout=300,
     )
@@ -353,10 +445,10 @@ def main():
         print("dry-run 模式：直接使用数据底稿作为报告")
         report_md = digest
     else:
-        tpl = AM_PROMPT if args.type == "am" else PM_PROMPT
-        user = tpl.format(date=f"{now:%Y-%m-%d}（{'周' + '一二三四五六日'[now.weekday()]}）", digest=digest)
-        print("调用 DeepSeek 生成报告 ...")
-        report_md = call_deepseek(SYSTEM_PROMPT, user, os.environ["DEEPSEEK_API_KEY"])
+        user = build_user_prompt(args.type, now, digest)
+        print("调用 DeepSeek 生成报告（提示词：skills/ashare-daily-report）...")
+        report_md = call_deepseek(load_system_prompt(), user,
+                                  os.environ["DEEPSEEK_API_KEY"])
 
     key = save_report(args.type, report_md, now)
     print(f"报告已生成: reports/{key}.html")

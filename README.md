@@ -16,6 +16,13 @@ auto_daily/
 ├── scripts/
 │   ├── generate_report.py    # 数据抓取 + AI 报告生成（本地/Actions 用）
 │   └── build_index.py        # 静态首页生成（GitHub Pages 方案用）
+├── skills/ashare-daily-report/  # 报告生成 Skill（与本地 dsh 链路 v4.2 提示词同源）
+│   ├── SKILL.md              # Skill 说明（文件清单、占位符约定、数据边界）
+│   ├── prompts/system.md     # 系统提示词（角色设定、三条铁律、写作规范）
+│   ├── prompts/am.md         # 盘前晨报提示词（多维窄区间预测 + 昨日评判 + 修正闭环）
+│   ├── prompts/pm.md         # 收盘复盘提示词（市场定性 + 晨报对照 + 明日关注）
+│   ├── prompts/scoring-v3.md # 多维评判连续评分规则（完整存档）
+│   └── correction-library.md # 修正建议库（自修正闭环记忆体，云产出建议应回填）
 ├── reports/                  # 历史报告存档（随仓库分发）
 ├── .github/workflows/daily.yml  # 交易日 07:15/16:05 自动生成（可选）
 ├── index.html                # 静态站首页（GitHub Pages 方案用）
@@ -58,6 +65,20 @@ auto_daily/
 - Community Cloud 免费额度：App 闲置约一周会休眠，访问时自动唤醒（首次约 30 秒）；公开仓库部署无限制。
 - Cloud 容器文件系统是临时的：AI 生成的报告在页面上缓存展示，**长期存档**请把报告文件提交回仓库 `reports/`（或用下面的 Actions 方案自动做）。
 - **关于存档**：历史报告随仓库永久分发；要新增存档，把报告 .html 放进 `reports/` 并按 `YYYYMMDD-am|pm.html` 命名后 push，或在「历史报告」页点「下载 HTML」手动留存。
+
+## 报告生成 Skill（提示词与本地链路同源）
+
+AI 报告的提示词不在代码里硬编码，而是内置在 `skills/ashare-daily-report/`（迁移自本地 dsh 链路的
+v4.2 方法论，详见其中 SKILL.md）。生成时自动完成三件事：
+
+1. 加载 `prompts/system.md`（角色 + 三条铁律 + 写作规范）与 `prompts/am|pm.md`（完整输出结构：
+   TL;DR 决策卡、多维窄区间预测、情景概率表、开盘决策树、昨日预测多维评判等）；
+2. **注入上一份晨报原文**（`reports/` 里最近一份 am 报告，md 或 html 均可）→ 生成"昨日预测多维评判"小节，形成预测-验证闭环；
+3. **注入修正建议库**（`correction-library.md` 最近内容）→ 作为今日预测的约束条件，延续自修正闭环。
+
+要微调报告风格/结构，直接改 `skills/ashare-daily-report/prompts/` 下的 md 文件即可，无需动代码。
+云端报告产生的"修正建议"小节，应回填到 `correction-library.md` 并提交，形成跨日记忆
+（Streamlit 容器是临时的，不提交下次部署会丢失）。
 
 ## 二、（可选）GitHub Pages 静态站 + 每日自动生成
 
