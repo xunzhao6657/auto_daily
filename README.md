@@ -37,11 +37,17 @@ auto_daily/
    Main file path `app.py` → Deploy。约 2 分钟后拿到
    `https://<app名>.streamlit.app` 公网地址。
 
-3. **配置 AI Key（可选）**：App 页面右下角 **Settings → Secrets**，粘贴：
+3. **配置 AI Key（可选）**：App 页面右上角 **Settings → Secrets**，粘贴：
    ```toml
    DEEPSEEK_API_KEY = "sk-你的key"
+   # 可选：设置后整站要求密码，防止公开访问者使用你的 Key
+   APP_PASSWORD = "你的密码"
    ```
    保存后自动重启，即可在「AI 分析报告」页一键生成报告（Key 只存在 Cloud 后台，不进代码）。
+
+   > 也可直接在**网页左侧「🔑 API Key 配置」**粘贴 Key 并点「测试连接」——
+   > 这种方式 Key 只存于当前浏览器会话的内存里（不写盘、不进仓库、刷新即清），
+   > 适合临时使用。两种方式二选一，服务端 Secrets 更安全。
 
 4. **手机使用**：手机浏览器打开网址 →「添加到主屏幕」，即得带图标的准 App。
 
@@ -51,6 +57,7 @@ auto_daily/
 - **AI 报告按「当天+类型」缓存 1 小时**，同一时段多次访问不重复扣 Token。
 - Community Cloud 免费额度：App 闲置约一周会休眠，访问时自动唤醒（首次约 30 秒）；公开仓库部署无限制。
 - Cloud 容器文件系统是临时的：AI 生成的报告在页面上缓存展示，**长期存档**请把报告文件提交回仓库 `reports/`（或用下面的 Actions 方案自动做）。
+- **关于存档**：历史报告随仓库永久分发；要新增存档，把报告 .html 放进 `reports/` 并按 `YYYYMMDD-am|pm.html` 命名后 push，或在「历史报告」页点「下载 HTML」手动留存。
 
 ## 二、（可选）GitHub Pages 静态站 + 每日自动生成
 
