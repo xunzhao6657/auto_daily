@@ -6,9 +6,11 @@
 """
 import datetime as dt
 import os
+import re
 import sys
 from pathlib import Path
 
+import requests
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parent
@@ -34,8 +36,38 @@ st.markdown("""
 .up{color:#c9353f;} .down{color:#0a8a4a;} .flat{color:#6b7280;}
 section[data-testid="stSidebar"]{border-right:1px solid #e8eaee;}
 .stTabs [data-baseweb="tab-list"]{gap:8px;}
+/* 历史报告隔离样式（避免污染整站） */
+.rpt{font-size:14px;line-height:1.7;}
+.rpt h1{font-size:19px;margin:18px 0 8px;}
+.rpt h2{font-size:16px;margin:20px 0 8px;padding-bottom:4px;border-bottom:1px solid #eee;}
+.rpt h3{font-size:14px;margin:14px 0 6px;}
+.rpt table{border-collapse:collapse;width:100%;margin:8px 0;font-size:13px;}
+.rpt th,.rpt td{border:1px solid #e8eaee;padding:4px 8px;text-align:left;}
+.rpt th{background:#f1f2f5;font-weight:500;}
+.rpt blockquote{margin:8px 0;padding:6px 12px;border-left:3px solid #c9353f;
+  background:#fdf3f3;color:#6b5a5a;font-size:13px;}
+.rpt code{background:#f1f2f5;padding:1px 4px;border-radius:4px;font-size:12px;}
+.rpt strong{color:#c9353f;}
+.rpt hr{border:none;border-top:1px solid #e8eaee;margin:16px 0;}
 </style>
 """, unsafe_allow_html=True)
+
+# 可选：若在 Secrets 里设置了 APP_PASSWORD，则整站要求密码（私密模式）
+_APP_PW = None
+try:
+    _APP_PW = st.secrets.get("APP_PASSWORD")
+except Exception:
+    pass
+if _APP_PW and not st.session_state.get("_pw_ok"):
+    st.markdown("### 🔒 本网站已设为私密，请输入访问密码")
+    pw = st.text_input("访问密码", type="password", key="_pw_in")
+    if pw:
+        if pw == _APP_PW:
+            st.session_state["_pw_ok"] = True
+            st.rerun()
+        else:
+            st.error("密码错误")
+    st.stop()
 
 
 def _cls(v):
@@ -77,12 +109,43 @@ def ai_report(rtype: str, day: str, digest: str, key: str) -> str:
 
 
 def get_api_key():
+    """Key 优先级：网页会话输入 > 服务端 Secrets > 环境变量。"""
+    if st.session_state.get("_dk"):
+        return st.session_state["_dk"]
     try:
         if "DEEPSEEK_API_KEY" in st.secrets:
             return st.secrets["DEEPSEEK_API_KEY"]
     except Exception:
         pass
     return os.environ.get("DEEPSEEK_API_KEY", "")
+
+
+def check_key(k):
+    """通过 DeepSeek /models 接口验证 Key 是否可用。"""
+    if not k.strip():
+        return False, "未输入 Key"
+    try:
+        r = requests.get("https://api.deepseek.com/models",
+                         headers={"Authorization": f"Bearer {k.strip()}"}, timeout=20)
+        if r.status_code == 200:
+            return True, "连接成功 ✓"
+        if r.status_code == 401:
+            return False, "无效的 Key（401）"
+        return False, f"服务返回状态码 {r.status_code}"
+    except Exception as e:
+        return False, f"请求异常：{e}"
+
+
+def _body_of(html_text):
+    """抽取全量 HTML 文档的 <body> 内部内容，其余（<head>/<style>）丢弃以免污染站内样式。"""
+    m = re.search(r"<body[^>]*>(.*)</body>", html_text, re.S)
+    return m.group(1) if m else html_text
+
+
+def render_report(f):
+    """用 st.html 渲染一份历史报告 HTML（body 内容 + 隔离样式）。"""
+    html_text = f.read_text(encoding="utf-8")
+    st.html(f'<div class="rpt">{_body_of(html_text)}</div>')
 
 
 def list_reports():
@@ -107,7 +170,25 @@ with st.sidebar:
         fetch_all.clear()
         st.rerun()
     st.divider()
-    st.caption("AI 分析需配置 `DEEPSEEK_API_KEY`（Secrets）")
+
+    with st.expander("🔑 API Key 配置", expanded=False):
+        cur = get_api_key()
+        st.caption("状态：" + ("✅ 已配置可用 Key" if cur else "未配置"))
+        val = st.text_input(
+            "粘贴 DeepSeek Key（仅存于本次会话内存，不写盘、不进仓库）",
+            type="password", key="_key_input")
+        if st.button("测试连接", use_container_width=True):
+            ok, msg = check_key(val)
+            st.session_state["_key_test"] = (ok, msg)
+            if ok and val.strip():
+                st.session_state["_dk"] = val.strip()
+        if "_key_test" in st.session_state:
+            ok, msg = st.session_state["_key_test"]
+            (st.success if ok else st.error)(msg)
+            if ok:
+                st.caption("本会话已启用该 Key（刷新页面即清除）。")
+        st.caption("也可用服务端 Secrets 配置 `DEEPSEEK_API_KEY`，或设置 "
+                   "`APP_PASSWORD` 将整站设为私密。")
 
 data = fetch_all()
 now = dt.datetime.now()
@@ -217,10 +298,9 @@ with tab_ai:
                      format_func=lambda x: "🌅 盘前分析" if x == "am" else "🌇 收盘总结",
                      horizontal=True)
     if not key:
-        st.warning("尚未配置 `DEEPSEEK_API_KEY`。请到 Streamlit Cloud 的 "
-                   "**Settings → Secrets** 添加（格式见仓库 `.streamlit/secrets.toml.example`），"
-                   "配置后即可在本页一键生成 AI 分析报告。")
-        st.caption("在未配置 Key 期间，可使用「数据底稿」视图（见实时行情页底部）。")
+        st.warning("尚未配置 `DEEPSEEK_API_KEY`。可在左侧「🔑 API Key 配置」粘贴 Key "
+                   "并点「测试连接」；或到 Secrets 配置（服务端更安全）。")
+        st.caption("未配置期间，可先看「实时行情」页底部的数据底稿。")
     else:
         if st.button(f"🤖 生成{'盘前分析' if rtype == 'am' else '收盘总结'}（AI）",
                      type="primary"):
@@ -236,6 +316,9 @@ with tab_ai:
         st.markdown(md)
         st.download_button("下载 Markdown", md,
                            file_name=f"daily-{now:%Y%m%d}-{rtype}.md")
+        st.info("⚠️ 存档说明：Streamlit 免费版为临时文件系统，网页上生成的报告**不会自动写入仓库**。"
+                "需长期存档请：① 点上方按钮下载 .md，或 ② 移入仓库 `reports/` 后提交推送，"
+                "或 ③ 用仓库内的 GitHub Actions 每日定时生成并提交。")
         st.caption("报告按「当天 + 类型」缓存 1 小时，避免重复消耗 Token。")
 
 # ---------------- Tab 3: 历史报告 ----------------
@@ -254,11 +337,16 @@ with tab_hist:
         else:
             pick_t = next(iter(day_items))
         f = day_items.get(pick_t) or next(iter(day_items.values()))
-        st.caption(f"共 {len(dates)} 个交易日的报告存档")
-        try:
-            st.iframe(f.read_text(encoding="utf-8"), height=3200, scrolling=True)
-        except Exception as e:
-            st.error(f"渲染失败：{e}")
+        st.caption(f"共 {len(dates)} 个交易日存档 · 点击下方🔽 下载 HTML 原文")
+        with st.expander("查看完整报告", expanded=True):
+            try:
+                render_report(f)
+            except Exception as e:
+                st.error(f"渲染失败：{e}")
+        with st.expander("⬇️ 下载 / 存档", expanded=False):
+            st.download_button("下载本报告 HTML", f.read_bytes(),
+                               file_name=f.name)
+            st.caption("历史报告随仓库永久存档；新增报告需提交到 `reports/` 或由 Actions 自动生成。")
 
 st.divider()
 st.caption("数据来源：东方财富公开接口（延迟约 15 分钟） · AI 生成内容仅供个人研究参考，"
