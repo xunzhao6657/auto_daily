@@ -244,7 +244,6 @@ with tab_hist:
     if not items:
         st.info("reports/ 目录暂无历史报告。")
     else:
-        import streamlit.components.v1 as components
         dates = sorted({d for _, d, _ in items})
         pick = st.select_slider("选择日期（最新在右）", options=dates, value=dates[-1])
         day_items = {t: f for f, d, t in items if d == pick}
@@ -257,8 +256,7 @@ with tab_hist:
         f = day_items.get(pick_t) or next(iter(day_items.values()))
         st.caption(f"共 {len(dates)} 个交易日的报告存档")
         try:
-            components.html(f.read_text(encoding="utf-8"),
-                            height=3200, scrolling=True)
+            st.iframe(f.read_text(encoding="utf-8"), height=3200, scrolling=True)
         except Exception as e:
             st.error(f"渲染失败：{e}")
 
